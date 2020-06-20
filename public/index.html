@@ -9,6 +9,32 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-controller="CommonplaceController as ctrl">
+  <section ng-if="ctrl.loggedInUser === false">
+    <form name="login" ng-submit="ctrl.login()">
+      <h2>Login</h2>
+      <label for="username">Username:</label>
+      <input type="text" name="username" ng-model="ctrl.createForm.username">
+      <label for="password">Password:</label>
+      <input type="text" name="password" ng-model="ctrl.createForm.password">
+      <input type="submit">
+    </form>
+    <form name="signup" ng-submit="ctrl.signup()">
+      <h2>Sign Up</h2>
+      <label for="firstname">First Name:</label>
+      <input type="text" name="firstname" ng-model="ctrl.createForm.firstname">
+      <label for="lastname">Last Name:</label>
+      <input type="text" name="lastname" ng-model="ctrl.createForm.lastname">
+      <label for="username">Username:</label>
+      <input type="text" name="username" ng-model="ctrl.createForm.username">
+      <label for="password">Password:</label>
+      <input type="password" name="password" ng-model="ctrl.createForm.password">
+      <input type="submit">
+    </form>
+  </section>
+  <section ng-if="ctrl.loggedInUser !== false">
+    <h2>Welcome!</h2>
+  </section>
   
+
 </body>
 </html>
