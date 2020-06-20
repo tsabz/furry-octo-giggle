@@ -5,23 +5,36 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.createForm = {}
   this.loginForm = true;
   this.signupForm = false;
-  this.name = null;
-  this.body = null;
-  this.author = null;
-  this.image = null;
-  this.tags = null;
-  this.public = false;
- 
+  this.createBookmarkForm = {}
+  this.allQuotes = []
+  this.userQuotes = []
 
 
-  this.createBookmarkForm = () => {
+  this.getQuotes = () => {
+    $http(
+      {
+        method: 'GET',
+        url: '/quotes'
+      }
+    ).then (
+      function(reponse){
+        this.allQuotes = this.response.data
+        console.log(this.allQuotes);
+        
+      }
+    )
+  }
+
+
+  this.createBookmark = () => {
     this.createBookmarkForm.postedBy = this.loggedInUser._id
     $http({
       method: 'POST',
       url: '/quotes',
       data: this.createBookmarkForm
     }).then(function(response){
-        console.log(response);      
+        console.log(response); 
+        this.createBookmarkForm = {}     
       }, function() {
         console.log('error');
       });
@@ -84,5 +97,8 @@ app.controller("CommonplaceController", ['$http', function($http) {
       this.loggedInUser = false;
     })
   }
+
+  this.getQuotes()
+
 
 }]); //BEYOND THE WALL
