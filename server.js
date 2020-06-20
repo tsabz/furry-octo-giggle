@@ -22,6 +22,9 @@ mongoose.connection.once('open', ()=>{
 const quotesController = require('./controllers/quotes.js');
 app.use('/quotes', quotesController);
 
+const userController = require('./controllers/users.js');
+app.use('/user', userController);
+
 // *** CONNECTON *** //
 app.listen(PORT, ()=>{
     console.log('COMMONPLACEBOOK-SUCCESS!!, LISTENING ON PORT', PORT);
