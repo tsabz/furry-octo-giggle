@@ -12,33 +12,13 @@
   <nav ng-include="'partials/nav.html'"></nav>
   <div class="container">
     <section ng-if="ctrl.loggedInUser === false">
-      <div ng-include="'partials/login.html'"></div>
-      <form name="login" ng-submit="ctrl.login()">
-        <h2>Login</h2>
-        <label for="username">Username:</label>
-        <input type="text" name="username" ng-model="ctrl.createForm.username">
-        <label for="password">Password:</label>
-        <input type="password" name="password" ng-model="ctrl.createForm.password">
-        <input type="submit">
-      </form>
-      <div ng-include="'partials/signup.html'"></div>
-      <form name="signup" ng-submit="ctrl.signup()">
-        <h2>Sign Up</h2>
-        <label for="firstname">First Name:</label>
-        <input type="text" name="firstname" ng-model="ctrl.createForm.firstname">
-        <label for="lastname">Last Name:</label>
-        <input type="text" name="lastname" ng-model="ctrl.createForm.lastname">
-        <label for="username">Username:</label>
-        <input type="text" name="username" ng-model="ctrl.createForm.username">
-        <label for="password">Password:</label>
-        <input type="password" name="password" ng-model="ctrl.createForm.password">
-        <input type="submit">
-      </form>
+      <div ng-if="ctrl.loginForm === true" ng-include="'partials/login.html'"></div>
+      <div ng-if="ctrl.signupForm === true" ng-include="'partials/signup.html'"></div>
     </section>
     <section ng-if="ctrl.loggedInUser !== false">
       <h2>Welcome!</h2>
       <button ng-click="ctrl.logout()">Logout</button>
-      <div ng-include="'partials/card-section'"></div>
+      <div ng-include="'partials/card-section.html'"></div>
     </section>
   </div>
 
