@@ -12,6 +12,17 @@ app.controller("CommonplaceController", ['$http', function($http) {
     this.signupForm = !this.signupForm;
   }
 
+  //sets login or signup active via buttons on nav
+  this.setLogin = () => {
+    this.loginForm = true;
+    this.signupForm = false;
+  }
+
+  this.setSignup = () => {
+    this.signupForm = true;
+    this.loginForm = false;
+  }
+
    //SIGNUP
   this.signup = () => {
     $http({
