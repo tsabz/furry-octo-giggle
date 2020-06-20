@@ -17,14 +17,27 @@ app.controller("CommonplaceController", ['$http', function($http) {
         url: '/quotes'
       }
     ).then (
-      function(reponse){
-        this.allQuotes = this.response.data
+      function(response){        
+        console.log(response);
+        this.allQuotes = response.data
         console.log(this.allQuotes);
-        
       }
     )
   }
 
+  this.getUserQuotes = () => {
+    $http(
+      {
+        method: 'GET',
+        url: '/user/myQuotes'
+      }
+    ).then(
+      function(response){
+        this.userQuotes = response.data
+        console.log(this.userQuotes);       
+      }
+    )
+  }
 
   this.createBookmark = () => {
     this.createBookmarkForm.postedBy = this.loggedInUser._id
@@ -67,6 +80,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
       console.log(response.data)
       this.loggedInUser = response.data
       this.createForm = {}
+      this.getUserQuotes()
     })
   }
 
@@ -81,10 +95,12 @@ app.controller("CommonplaceController", ['$http', function($http) {
         console.log(response.data)
         this.loggedInUser = response.data
         this.createForm = {}
+        this.getUserQuotes()
       } else {
         this.createForm = {}
       }
     })
+
   }
 
   //LOGOUT
