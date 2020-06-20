@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
 
 //This ALL needs to be tested via postman! Need the dotenv file in order to access the Atlas instance locally -MR
@@ -12,6 +13,7 @@ router.get('/', (req, res) => {
 
 //CREATE
 router.post('/', (req, res) => {
+  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
   User.create(
   {
    firstname: req.body.firstname,
