@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
+const Quote = require('../models/quote.js');
+
 
 //This ALL needs to be tested via postman! Need the dotenv file in order to access the Atlas instance locally -MR
 //GET
@@ -9,6 +11,13 @@ router.get('/', (req, res) => {
   User.find({}, (err, foundUsers) => {
     res.json(foundUsers);
   })
+})
+
+//GETS ALL QUOTES FOR CURRENT USER
+router.get('/myQuotes', (req, res) => {
+ Quote.find({postedBy:  req.session.currentUser._id}, (err, foundQuotes) => {
+   res.json(foundQuotes)
+ })
 })
 
 //CREATE
