@@ -3,8 +3,16 @@ const app = angular.module("CommonplaceApp", []);
 app.controller("CommonplaceController", ['$http', function($http) {
   this.loggedInUser = false
   this.createForm = {}
+  this.loginForm = true;
+  this.signupForm = false;
 
-  //SIGNUP
+  //toggle between signup and login forms
+  this.toggleForm = () => {
+    this.loginForm = !this.loginForm;
+    this.signupForm = !this.signupForm;
+  }
+
+   //SIGNUP
   this.signup = () => {
     $http({
       url: '/user',
