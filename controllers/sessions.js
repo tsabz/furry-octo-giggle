@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
 
+
+//LOGIN FUNCTION
 router.post('/', (req, res) => {
   User.findOne({username: req.body.username}, (error, foundUser) => {
     if (error){
@@ -23,6 +25,15 @@ router.post('/', (req, res) => {
         });
       }
     }
+  })
+})
+
+//DESTROY SESSION
+router.delete('/', (req, res) => {
+  req.session.destroy(() => {
+    res.json({
+      destroyed: true
+    })
   })
 })
 

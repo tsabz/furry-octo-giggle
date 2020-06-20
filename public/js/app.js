@@ -34,4 +34,15 @@ app.controller("CommonplaceController", ['$http', function($http) {
     })
   }
 
+  //LOGOUT
+  this.logout = () => {
+    $http({
+      url: '/session',
+      method: 'DELETE'
+    }).then((response) => {
+      console.log(response.data)
+      this.loggedInUser = false;
+    })
+  }
+
 }]); //BEYOND THE WALL
