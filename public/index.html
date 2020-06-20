@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-controller="CommonplaceController as ctrl">
-  <nav ng-include="'partials/nav'"></nav>
+  <nav ng-include="'partials/nav.html'"></nav>
   <div class="container">
     <section ng-if="ctrl.loggedInUser === false">
-      <div ng-include="'partials/login'"></div>
+      <div ng-include="'partials/login.html'"></div>
       <form name="login" ng-submit="ctrl.login()">
         <h2>Login</h2>
         <label for="username">Username:</label>
@@ -21,7 +21,7 @@
         <input type="password" name="password" ng-model="ctrl.createForm.password">
         <input type="submit">
       </form>
-      <div ng-include="'partials/signup'"></div>
+      <div ng-include="'partials/signup.html'"></div>
       <form name="signup" ng-submit="ctrl.signup()">
         <h2>Sign Up</h2>
         <label for="firstname">First Name:</label>
