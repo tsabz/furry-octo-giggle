@@ -5,53 +5,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.createForm = {}
   this.loginForm = true;
   this.signupForm = false;
-  this.createBookmarkForm = {}
-  this.allQuotes = []
-  this.userQuotes = []
-
-
-  this.getQuotes = () => {
-    $http(
-      {
-        method: 'GET',
-        url: '/quotes'
-      }
-    ).then (
-      function(response){        
-        console.log(response);
-        this.allQuotes = response.data
-        console.log(this.allQuotes);
-      }
-    )
-  }
-
-  this.getUserQuotes = () => {
-    $http(
-      {
-        method: 'GET',
-        url: '/user/myQuotes'
-      }
-    ).then(
-      function(response){
-        this.userQuotes = response.data
-        console.log(this.userQuotes);       
-      }
-    )
-  }
-
-  this.createBookmark = () => {
-    this.createBookmarkForm.postedBy = this.loggedInUser._id
-    $http({
-      method: 'POST',
-      url: '/quotes',
-      data: this.createBookmarkForm
-    }).then(function(response){
-        console.log(response); 
-        this.createBookmarkForm = {}     
-      }, function() {
-        console.log('error');
-      });
-  }
 
   //toggle between signup and login forms
   this.toggleForm = () => {
@@ -80,7 +33,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       console.log(response.data)
       this.loggedInUser = response.data
       this.createForm = {}
-      this.getUserQuotes()
     })
   }
 
@@ -95,12 +47,10 @@ app.controller("CommonplaceController", ['$http', function($http) {
         console.log(response.data)
         this.loggedInUser = response.data
         this.createForm = {}
-        this.getUserQuotes()
       } else {
         this.createForm = {}
       }
     })
-
   }
 
   //LOGOUT
@@ -113,8 +63,5 @@ app.controller("CommonplaceController", ['$http', function($http) {
       this.loggedInUser = false;
     })
   }
-
-  this.getQuotes()
-
 
 }]); //BEYOND THE WALL
