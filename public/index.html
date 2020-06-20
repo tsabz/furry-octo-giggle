@@ -6,9 +6,43 @@
   <title>CommonPlace</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-controller="CommonplaceController as ctrl">
+  <nav ng-include="'partials/nav'"></nav>
+  <div class="container">
+    <section ng-if="ctrl.loggedInUser === false">
+      <div ng-include="'partials/login'"></div>
+      <form name="login" ng-submit="ctrl.login()">
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" name="username" ng-model="ctrl.createForm.username">
+        <label for="password">Password:</label>
+        <input type="password" name="password" ng-model="ctrl.createForm.password">
+        <input type="submit">
+      </form>
+      <div ng-include="'partials/signup'"></div>
+      <form name="signup" ng-submit="ctrl.signup()">
+        <h2>Sign Up</h2>
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" ng-model="ctrl.createForm.firstname">
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" ng-model="ctrl.createForm.lastname">
+        <label for="username">Username:</label>
+        <input type="text" name="username" ng-model="ctrl.createForm.username">
+        <label for="password">Password:</label>
+        <input type="password" name="password" ng-model="ctrl.createForm.password">
+        <input type="submit">
+      </form>
+    </section>
+    <section ng-if="ctrl.loggedInUser !== false">
+      <h2>Welcome!</h2>
+      <button ng-click="ctrl.logout()">Logout</button>
+      <div ng-include="'partials/card-section'"></div>
+    </section>
+  </div>
+
   
+
 </body>
 </html>
