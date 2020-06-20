@@ -1,1 +1,16 @@
-<h2>signup test</h2>
+<form name="signup" ng-submit="ctrl.signup()">
+  <h2>Sign Up</h2>
+  <fieldset>
+    <label for="firstname">First Name:</label>
+    <input type="text" name="firstname" ng-model="ctrl.createForm.firstname">
+    <label for="lastname">Last Name:</label>
+    <input type="text" name="lastname" ng-model="ctrl.createForm.lastname">
+    <label for="username">Username:</label>
+    <input type="text" name="username" ng-model="ctrl.createForm.username">
+    <label for="password">Password:</label>
+    <input type="password" name="password" ng-model="ctrl.createForm.password">
+  </fieldset>
+  <input type="submit">
+  <p>Already have an account? <button ng-click="toggleForm()">Log In Instead</button></p>
+  
+</form>
