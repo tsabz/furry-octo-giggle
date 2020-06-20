@@ -5,6 +5,27 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.createForm = {}
   this.loginForm = true;
   this.signupForm = false;
+  this.name = null;
+  this.body = null;
+  this.author = null;
+  this.image = null;
+  this.tags = null;
+  this.public = false;
+ 
+
+
+  this.createBookmarkForm = () => {
+    this.createBookmarkForm.postedBy = this.loggedInUser._id
+    $http({
+      method: 'POST',
+      url: '/quotes',
+      data: this.createBookmarkForm
+    }).then(function(response){
+        console.log(response);      
+      }, function() {
+        console.log('error');
+      });
+  }
 
   //toggle between signup and login forms
   this.toggleForm = () => {
