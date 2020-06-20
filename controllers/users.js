@@ -12,11 +12,18 @@ router.get('/', (req, res) => {
 
 //CREATE
 router.post('/', (req, res) => {
-  User.create(req.body, (err, createdUser) => {
+  User.create(
+  {
+   firstname: req.body.firstname,
+   lastname: req.body.lastname,
+   password: req.body.password,
+   username: req.body.username
+  }, (err, createdUser) => {
     if (err){
       res.send(err)
+    } else {
+      res.json(createdUser)
     }
-    res.json(createdUser)
   })
 })
 
