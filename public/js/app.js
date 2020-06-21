@@ -6,7 +6,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.signupForm = false;
 
   this.createForm = {}
-  this.createQuoteForm = {}
   this.allQuotes = []
   this.userQuotes = []
 
@@ -50,17 +49,28 @@ app.controller("CommonplaceController", ['$http', function($http) {
   }
 
   this.createQuote = () => {
-    this.createQuoteForm.postedBy = this.loggedInUser._id
+    this.tagsArray = this.tags.split(',');
     $http({
       method: 'POST',
       url: '/quotes',
-      data: this.createQuoteForm
-    }).then(function(response){
+      data: {
+        name: this.name,
+        body: this.body,
+        author: this.author,
+        image: this.image,
+        tags: this.tagsArray,
+        public: this.public,
+        postedBy: this.loggedInUser._id,
+    
+      }
+    }).then( 
+        response => {
         console.log(response); 
         this.allQuotes.unshift(response.data)
         this.createQuoteForm = {}     
-      }, function() {
-        console.log('error');
+      }, error => 
+      {
+        console.log(error);
       });
   }
 
