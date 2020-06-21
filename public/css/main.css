@@ -3,15 +3,6 @@
   margin: auto;
 }
 
-form input[type="text"], input[type="password"], textarea {
-  width: 100%;
-  display: block;
-}
-
-form input[type="checkbox"] {
-  width: 50%;
-}
-
 nav div {
   width: 100%;
   padding: 5px 20px;
@@ -31,9 +22,7 @@ nav div {
 }
 
 nav div a {
-  text-decoration: none;
-  color: #000000;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 nav div a:hover {
