@@ -2,11 +2,11 @@
 <div class="card-section">
   <!-- Need to add an array into app.js that is specific to cards
   with user's id attached, uses bookmark show route to fill array.-->
-  <div class="card">
-    <div class="quote-section"></div>
+  <div class="card" ng-repeat="quote in ctrl.userQuoteArray">
+    <div class="quote-section">quote.body</div>
     <div class="quote-details-section">
-    <p>Name</p>
-    <p>Author</p>
+    <p>quote.name</p>
+    <p>quote.auther</p>
     <button>Edit</button>
     </div>
     <div class="tags">
