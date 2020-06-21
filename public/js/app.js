@@ -2,12 +2,18 @@ const app = angular.module("CommonplaceApp", []);
 
 app.controller("CommonplaceController", ['$http', function($http) {
   this.loggedInUser = false
-  this.createForm = {}
   this.loginForm = true;
   this.signupForm = false;
+
+  this.createForm = {}
   this.createBookmarkForm = {}
   this.allQuotes = []
   this.userQuotes = []
+
+  this.includePath = 'partials/card-section.html';
+  this.changePath= (path) => {
+    this.includePath = 'partials/' + path
+  }
 
 
   this.getQuotes = () => {
@@ -29,12 +35,16 @@ app.controller("CommonplaceController", ['$http', function($http) {
     $http(
       {
         method: 'GET',
-        url: '/user/myQuotes'
+        url: '/session/quotes'
       }
     ).then(
-      function(response){
+      response => {
         this.userQuotes = response.data
         console.log(this.userQuotes);       
+      },
+      error => {
+        console.log(error.message);
+        
       }
     )
   }

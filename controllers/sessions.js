@@ -2,7 +2,14 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
+const Quote = require('../models/quote');
 
+////GETS ALL QUOTES FOR CURRENT USER
+router.get('/quotes', (req, res) => {
+ Quote.find({postedBy:  req.session.user._id}, (err, foundQuotes) => {
+   res.json(foundQuotes)
+ })
+})
 
 //LOGIN FUNCTION
 router.post('/', (req, res) => {
