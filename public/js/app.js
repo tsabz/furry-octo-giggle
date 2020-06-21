@@ -6,7 +6,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.signupForm = false;
 
   this.createForm = {}
-  this.createBookmarkForm = {}
+  this.createQuoteForm = {}
   this.allQuotes = []
   this.userQuotes = []
 
@@ -49,16 +49,16 @@ app.controller("CommonplaceController", ['$http', function($http) {
     )
   }
 
-  this.createBookmark = () => {
-    this.createBookmarkForm.postedBy = this.loggedInUser._id
+  this.createQuote = () => {
+    this.createQuoteForm.postedBy = this.loggedInUser._id
     $http({
       method: 'POST',
       url: '/quotes',
-      data: this.createBookmarkForm
+      data: this.createQuoteForm
     }).then(function(response){
         console.log(response); 
         this.allQuotes.unshift(response.data)
-        this.createBookmarkForm = {}     
+        this.createQuoteForm = {}     
       }, function() {
         console.log('error');
       });
