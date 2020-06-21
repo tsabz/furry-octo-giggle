@@ -25,22 +25,24 @@ app.controller("CommonplaceController", ['$http', function($http) {
 
   //GET ALL QUOTES IN COLLECTION
   this.getQuotes = () => {
+    console.log('===================== Getting all quotes ===============');
     $http(
       {
         method: 'GET',
         url: '/quotes'
       }
     ).then (
-      function(response){        
+      response => {        
         console.log(response);
         this.allQuotes = response.data
-        console.log(this.allQuotes);
+        console.log(`loading all quotes... ${JSON.stringify(this.allQuotes[0])}`);
       }
     )
   }
 
   // GET ALL QUOTES BY LOGGED IN USER
   this.getUserQuotes = () => {
+    console.log('===================== Getting user quotes ===============');
     $http(
       {
         method: 'GET',
@@ -142,6 +144,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
       this.loggedInUser = response.data
       this.createForm = {}
       this.getUserQuotes()
+      this.getQuotes()
     })
   }
 
@@ -157,6 +160,10 @@ app.controller("CommonplaceController", ['$http', function($http) {
         this.loggedInUser = response.data
         this.createForm = {}
         this.getUserQuotes()
+        this.getQuotes()
+        console.log(`quotes array ${this.allQuotes}`)
+        console.log(`size of all quotes array ${this.userQuotes.length}`)
+
       } else {
         this.createForm = {}
       }
@@ -174,7 +181,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       this.loggedInUser = false;
     })
   }
-
   this.getQuotes()
 
 

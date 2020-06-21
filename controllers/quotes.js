@@ -9,6 +9,11 @@ const Quote = require('../models/quote.js');
 // GET //
 
 router.get('/', (req, res)=>{
+  console.log(' ');
+  console.log(' ');
+  console.log('====================================');
+  console.log('Getting all quote');
+  console.log(' ');
   Quote.find({}, (err, foundQuote)=>{
     res.json(foundQuote);
   });
