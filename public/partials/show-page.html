@@ -5,18 +5,22 @@
   <div class="row">
     <div class="card col s12 m6" ng-repeat="quote in ctrl.userQuotes">
       <div class="card-content">
-        <span class="card-title center">{{quote.name}}</span>
-        <p>{{quote.body}}</p>
-        <p>{{quote.auther}}</p>
+          <div class="top-bar">
+            <p>{{quote.name}}</p>
+            <div class="edit-and-delete-buttons">
+              <button class="btn-small" ng-if="ctrl.updateForm != $index" ng-click="ctrl.openUpdateForm($index)">Edit</button>
+              <button class="btn-small" ng-if="ctrl.updateForm === $index" ng-click="ctrl.closeUpdateForm()">Close Form</button>
+              <button class="btn-small" ng-click="ctrl.deleteQuote(quote)">X</button>
+          </div>
+          </div>
+          
+        <h2 class="quotebody">{{quote.body}}
+        <span class="author"><i>{{quote.author}}</i></span></h2>
         <ul class="tags-ul">
-          <li ng-repeat="tag in quote.tags">{{tag}}</li>
+          <li class="blue-grey" ng-repeat="tag in quote.tags">{{tag}}</li>
         </ul>
 
-        <div class="edit-and-delete-buttons">
-          <button class="btn-small" ng-if="ctrl.updateForm != $index" ng-click="ctrl.openUpdateForm($index)">Edit</button>
-          <button class="btn-small" ng-if="ctrl.updateForm === $index" ng-click="ctrl.closeUpdateForm()">Close Form</button>
-          <button ng-click="ctrl.deleteQuote(quote)">X</button>
-        </div>
+
 
         <div ng-if="ctrl.updateForm === $index">
           <div class="row editform">

@@ -28,4 +28,93 @@ nav div a {
 nav div a:hover {
   text-decoration: underline;
 }
+
+.tags-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tags-ul li {
+  color: #fff;
+  padding: .1rem .2rem;
+  text-transform: uppercase;
+}
+
+.top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-bar p {
+  font-size: 1.5rem;
+}
+
+.quotebody {
+  display: inline-block;
+  margin: 1.5rem 0;
+  padding: 40px 30px 30px 40px;
+  text-align: left;
+  font-size: 2rem;
+}
+
+.quotebody .author {
+  position: relative;
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+  color: #999;
+}
+
+.quotebody i {
+  position: relative;
+  background: #eee;
+  padding-left: 5px;
+  font-size: 1rem;
+  z-index: 5;
+}
+
+.edit-and-delete-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.edit-and-delete-buttons button {
+  margin-left: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
 /*# sourceMappingURL=main.css.map */
