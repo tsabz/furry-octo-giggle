@@ -21,8 +21,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
         console.log(response);
         this.allQuotes = response.data
         console.log(this.allQuotes);
-      }
-    )
+      })
   }
 
   this.getUserQuotes = () => {
