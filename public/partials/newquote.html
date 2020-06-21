@@ -1,0 +1,13 @@
+<form ng-submit="ctrl.createBookmark()">
+  <input type="text" name="name" ng-model="ctrl.createBookmarkForm.name" placeholder="Name for Quote">
+  <label for="name">Name Your Quote: </label>
+  <input type="text" name="body" ng-model="ctrl.createBookmarkForm.body" placeholder="Quote">
+  <label for="body">Your Quote: </label>
+  <input type="text" name="Author" ng-model="ctrl.createBookmarkForm.Author" placeholder="Author">
+  <label for="Author">Author: </label>
+  <input type="text" name="tags" ng-model="ctrl.createBookmarkForm.tags" placeholder="tags separated by comma">
+  <label for="tags">Enter your category tags, seperated by commas </label>
+  <input type="checkbox" name="public" ng-model="ctrl.createBookmarkForm.public">
+  <label for="public">Is this Quote Public? </label>
+  <input type="submit" value="Create Quote">
+</form>

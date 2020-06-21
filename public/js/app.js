@@ -51,7 +51,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
 
   this.createBookmark = () => {
     this.createBookmarkForm.postedBy = this.loggedInUser._id
-    console.log(this.createBookmarkForm);
     $http({
       method: 'POST',
       url: '/quotes',
