@@ -4,17 +4,19 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.loggedInUser = false
   this.loginForm = true;
   this.signupForm = false;
-
+  this.updateForm = null;
+  this.updatedQuoteForm = {}
   this.createForm = {}
   this.allQuotes = []
   this.userQuotes = []
 
+  //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
   this.changePath= (path) => {
     this.includePath = 'partials/' + path
   }
 
-
+  //GET ALL QUOTES IN COLLECTION
   this.getQuotes = () => {
     $http(
       {
@@ -30,6 +32,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
     )
   }
 
+  // GET ALL QUOTES BY LOGGED IN USER
   this.getUserQuotes = () => {
     $http(
       {
@@ -48,6 +51,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
     )
   }
 
+  // CREATE A QUOTE
   this.createQuote = () => {
     this.tagsArray = this.tags.split(',');
     $http({
@@ -67,11 +71,47 @@ app.controller("CommonplaceController", ['$http', function($http) {
         response => {
         console.log(response); 
         this.allQuotes.unshift(response.data)
+        this.userQuotes.unshift(response.data)
         this.createQuoteForm = {}     
       }, error => 
       {
         console.log(error);
       });
+  }
+
+  // EDIT QUOTES
+  this.editQuote = (quote) => {
+    $http({
+      method: 'PUT',
+      url: '/quotes/' + quote._id,  
+      data: this.updatedQuoteForm
+    }).then(
+      response => {
+        console.log(response);
+        this.getQuotes();
+        this.getUserQuotes();
+        this.updatedQuoteForm = {};
+      }, error => {
+          console.log(error);
+      }
+    )
+  }
+
+  // DELETE QUOTE
+  this.deleteQuote = (quote) => {
+    $http({
+      method: 'DELETE',
+      url: '/quotes/' + quote._id
+    }).then(
+        response => {
+          console.log(response.data);
+          this.getQuotes();
+          this.getUserQuotes();
+        }, error => { 
+          console.log(error);
+          
+        }
+    )
   }
 
   //toggle between signup and login forms
