@@ -8,23 +8,31 @@
     <label for="Author">Author: </label>
     <input type="text" class="active" name="Author" ng-model="ctrl.updatedQuoteForm.author" ng-value="quote.author">
   </div>
-
   </div>
-  
-  <label for="body">Your Quote: </label>
-  <textarea name="body" ng-model="ctrl.updatedQuoteForm.body" ng-value="quote.body"></textarea>
-  
-  <label for="tags">Enter your category tags, seperated by commas </label>
-  <input type="text" name="tags" ng-model="ctrl.updatedQuoteForm.tags" ng-value="quote.tags">
-
-  <div class="switch">
-  <label> 
-    Private 
-    <input type="checkbox" name="public" ng-model="ctrl.updatedQuoteForm.public" ng-value="quote.public">
-    <span class="lever"></span>
-    Public
-  </label>
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea class="materialize-textarea" id="edit-textarea" name="body" ng-model="ctrl.updatedQuoteForm.body" ng-value="quote.body"></textarea>
+      <label for="body">Your Quote: </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="tags" ng-model="ctrl.updatedQuoteForm.tags" ng-value="quote.tags">
+      <label for="tags">Enter your category tags, seperated by commas </label>
+    </div>
+  </div>
+  <div class="row center">
+    <div class="switch">
+      <label> 
+        Private 
+        <input type="checkbox" name="public" ng-model="ctrl.updatedQuoteForm.public" ng-value="quote.public">
+        <span class="lever"></span>
+        Public
+      </label>
+    </div>
+  </div>
+  <div class="row center">
+    <input class="btn-small" type="submit" value="Edit Quote">
   </div>
 
-  <input type="submit" value="Edit Quote">
 </form>
