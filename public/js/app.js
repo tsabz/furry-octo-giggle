@@ -41,12 +41,14 @@ app.controller("CommonplaceController", ['$http', function($http) {
 
   this.createBookmark = () => {
     this.createBookmarkForm.postedBy = this.loggedInUser._id
+    console.log(this.createBookmarkForm);
     $http({
       method: 'POST',
       url: '/quotes',
       data: this.createBookmarkForm
     }).then(function(response){
         console.log(response); 
+        this.allQuotes.unshift(response.data)
         this.createBookmarkForm = {}     
       }, function() {
         console.log('error');
