@@ -1,11 +1,11 @@
-  <input type="text" name="name" ng-model="ctrl.name" placeholder="Name for Quote">
   <label for="name">Name Your Quote: </label>
-  <input type="text" name="body" ng-model="ctrl.body" placeholder="Quote">
+  <input type="text" name="name" ng-model="ctrl.createQuoteForm.name" ng-value="quote.name">
   <label for="body">Your Quote: </label>
-  <input type="text" name="Author" ng-model="ctrl.author" placeholder="Author">
+  <textarea name="body" ng-model="ctrl.createQuoteForm.body" ng-value="quote.body"></textarea>
   <label for="Author">Author: </label>
-  <input type="text" name="tags" ng-model="ctrl.tags" placeholder="tags separated by comma">
+  <input type="text" name="Author" ng-model="ctrl.createQuoteForm.author" ng-value="quote.author">
   <label for="tags">Enter your category tags, seperated by commas </label>
-  <input type="checkbox" name="public" ng-model="ctrl.public">
-  <label for="public">Is this Quote Public? </label>
-  <input type="submit" value="Create Quote">
+  <input type="text" name="tags" ng-model="ctrl.createQuoteForm.tags" ng-value="quote.tags">
+  <label for="public">Share this Quote to the Feed:  </label>
+  <input type="checkbox" name="public" ng-model="ctrl.createQuoteForm.public" ng-value="quote.public">
+  <input type="submit" value="Edit Quote">
