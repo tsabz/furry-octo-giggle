@@ -32,7 +32,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
         url: '/quotes'
       }
     ).then (
-      function(response){        
+      response => {        
         console.log(response);
         this.allQuotes = response.data
         console.log(`loading all quotes... ${JSON.stringify(this.allQuotes[0])}`);
@@ -181,4 +181,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
       this.loggedInUser = false;
     })
   }
+  this.getQuotes()
+
+
 }]); //BEYOND THE WALL
