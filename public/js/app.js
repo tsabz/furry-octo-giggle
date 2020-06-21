@@ -17,6 +17,12 @@ app.controller("CommonplaceController", ['$http', function($http) {
     this.includePath = 'partials/' + path
   }
 
+  // OPEN EDIT FORM ON SHOW-PAGE.HTML
+  this.openupdateForm = (quoteIndex) => {
+    console.log('edit form triggered at index', quoteIndex);
+    this.updateForm = quoteIndex;
+  }
+
   //GET ALL QUOTES IN COLLECTION
   this.getQuotes = () => {
     $http(
@@ -61,16 +67,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       method: 'POST',
       url: '/quotes',
       data: this.createQuoteForm
-      //{
-      //  name: this.name,
-      //  body: this.body,
-      //  author: this.author,
-      //  image: this.image,
-      //  tags: this.tagsArray,
-      //  public: this.public,
-      //  postedBy: this.loggedInUser._id,
-    
-      //}
     }).then( 
         response => {
         console.log(response); 

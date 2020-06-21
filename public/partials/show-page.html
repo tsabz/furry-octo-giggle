@@ -8,7 +8,7 @@
     <div class="quote-details-section">
     <p>{{quote.name}}</p>
     <p>{{quote.auther}}</p>
-    <button ng-click="openupdateForm($index)">Edit</button>
+    <button ng-click="ctrl.openupdateForm($index)">Edit</button>
     <button ng-click="ctrl.deleteQuote(quote)">X</button>
     </div>
     <div class="tags">
@@ -16,20 +16,8 @@
           <li ng-repeat="tag in quote.tags">{{tag}}</li>
       </ul>
     </div>
-    <div class="editform" ng-if="this.updateForm === $index">
-      <form ng-submit="ctrl.editQuote(quote)">
-        <input type="text" name="name" ng-model="ctrl.name" placeholder="Name for Quote">
-        <label for="name">Name Your Quote: </label>
-        <input type="text" name="body" ng-model="ctrl.body" placeholder="Quote">
-        <label for="body">Your Quote: </label>
-        <input type="text" name="Author" ng-model="ctrl.author" placeholder="Author">
-        <label for="Author">Author: </label>
-        <input type="text" name="tags" ng-model="ctrl.tags" placeholder="tags separated by comma">
-        <label for="tags">Enter your category tags, seperated by commas </label>
-        <input type="checkbox" name="public" ng-model="ctrl.public">
-        <label for="public">Is this Quote Public? </label>
-        <input type="submit" value="Create Quote">
-      </form>
+    <div class="editform" ng-if="ctrl.updateForm === $index">
+      <form ng-include="'partials/editquote.html'" ng-submit="ctrl.editQuote(quote)"> </form>
     </div>
   </div>
 </div>
