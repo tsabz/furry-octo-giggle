@@ -17,6 +17,8 @@ router.get('/', (req, res)=>{
 // POST //
 router.post('/', (req, res)=>{
   Quote.create(req.body, (err, createdQuote)=>{
+    console.log("The req.body is ", req.body);
+    
     res.json(createdQuote);
   });
 });

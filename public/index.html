@@ -18,11 +18,9 @@
     </section>
     <section ng-if="ctrl.loggedInUser !== false">
       <h2>Welcome!</h2>
+      <div ng-include="'/partials/newquote.html'"></div>
       <div ng-include="ctrl.includePath"></div>
     </section>
   </div>
-
-  
-
 </body>
 </html>
