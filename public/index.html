@@ -11,14 +11,14 @@
 <body ng-controller="CommonplaceController as ctrl">
   <nav ng-include="'partials/nav.html'"></nav>
   <div class="container">
+
     <section ng-if="ctrl.loggedInUser === false">
       <div ng-if="ctrl.loginForm === true" ng-include="'partials/login.html'"></div>
       <div ng-if="ctrl.signupForm === true" ng-include="'partials/signup.html'"></div>
     </section>
     <section ng-if="ctrl.loggedInUser !== false">
       <h2>Welcome!</h2>
-      <button ng-click="ctrl.logout()">Logout</button>
-      <div ng-include="'partials/card-section.html'"></div>
+      <div ng-include="ctrl.includePath"></div>
     </section>
   </div>
 
