@@ -20,7 +20,7 @@ const quoteSchema = new Schema({
     type: Boolean, 
     default: true
   },
-  postedBy: Number,
+  postedBy: String,
 }, {
   timestamps: true
 });
