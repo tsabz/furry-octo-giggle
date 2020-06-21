@@ -3,17 +3,21 @@
   <h2>This is the Show Page</h2>
   <!-- Need to add an array into app.js that is specific to cards
   with user's id attached, uses bookmark show route to fill array.-->
-  <div class="card" ng-repeat="quote in ctrl.userQuoteArray">
-    <div class="quote-section">quote.body</div>
+  <div class="card" ng-repeat="quote in ctrl.userQuotes">
+    <div class="quote-section">{{quote.body}}</div>
     <div class="quote-details-section">
-    <p>quote.name</p>
-    <p>quote.auther</p>
-    <button>Edit</button>
+    <p>{{quote.name}}</p>
+    <p>{{quote.auther}}</p>
+    <button ng-click="ctrl.openupdateForm($index)">Edit</button>
+    <button ng-click="ctrl.deleteQuote(quote)">X</button>
     </div>
     <div class="tags">
-      <!-- another ng-repeat here -->
       <ul>
+          <li ng-repeat="tag in quote.tags">{{tag}}</li>
       </ul>
+    </div>
+    <div class="editform" ng-if="ctrl.updateForm === $index">
+      <div ng-include="'partials/editquote.html'" ></div>
     </div>
   </div>
 </div>
