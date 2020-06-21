@@ -24,6 +24,8 @@
 
 //style elements drawn from https://codepen.io/hannahlivnat/pen/wvMJmyw
 .quotebody {
+  max-height: 200px;
+  overflow-y: scroll;
   display: inline-block;
   margin: 1.5rem 0;
   padding: 40px 30px 30px 40px;
