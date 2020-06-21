@@ -1,23 +1,41 @@
-<h2>{{ctrl.loggedInUser.firstname}}'s Commonplace Book</h2>
+<h2 class="center">{{ctrl.loggedInUser.firstname}}'s Commonplace Book</h2>
 <div class="card-section">
-  <h2>This is the Show Page</h2>
   <!-- Need to add an array into app.js that is specific to cards
   with user's id attached, uses bookmark show route to fill array.-->
-  <div class="card" ng-repeat="quote in ctrl.userQuotes">
-    <div class="quote-section">{{quote.body}}</div>
-    <div class="quote-details-section">
-    <p>{{quote.name}}</p>
-    <p>{{quote.auther}}</p>
-    <button ng-click="ctrl.openupdateForm($index)">Edit</button>
-    <button ng-click="ctrl.deleteQuote(quote)">X</button>
-    </div>
-    <div class="tags">
-      <ul>
+  <div class="row">
+    <div class="card col s5" ng-repeat="quote in ctrl.userQuotes">
+      <div class="card-content">
+        <span class="card-title">{{quote.body}}</span>
+        <p>{{quote.name}}</p>
+        <p>{{quote.auther}}</p>
+      </div>
+      <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width">
+          <li class="tab"><a class="active" href="#tags">Tags</a></li>
+          <li class="tab" ng-click="ctrl.openupdateForm($index)"><a href="#edit">Edit</a></li>
+          <li class="tab"><a href="#delete">Delete</a></li>
+        </ul>
+      </div>
+      <div class="card-content">
+        <div id="tags">
+          <ul>
           <li ng-repeat="tag in quote.tags">{{tag}}</li>
-      </ul>
-    </div>
-    <div class="row editform" ng-if="ctrl.updateForm === $index">
-      <div ng-include="'partials/editquote.html'" ></div>
+          </ul>
+        </div>
+        <div id="edit">
+          <div class="row editform" ng-if="ctrl.updateForm === $index">
+            <div ng-include="'partials/editquote.html'" ></div>
+          </div>
+        </div>
+        <div id="delete">
+          <div class="row">
+            <div class="col s12">
+              <p>Are you sure you'd like to delete this card?</p>
+              <span><button class="btn-small" ng-click="ctrl.deleteQuote(quote)">X</button></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

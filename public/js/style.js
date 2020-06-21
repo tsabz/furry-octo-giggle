@@ -1,9 +1,13 @@
 $(() => {
   //dynamically update text fields in input type text
-  M.updateTextFields();
+  Materialize.updateTextFields();
 
 
   //dynamically change text area for edit form
   $('#edit-textarea').val('New Text');
-  M.textareaAutoResize($('#edit-textarea'));
+  Materialize.textareaAutoResize($('#edit-textarea'));
+
+  //make card tabs work
+  $('.tabs').tabs();
+
 })
