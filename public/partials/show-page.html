@@ -3,39 +3,31 @@
   <!-- Need to add an array into app.js that is specific to cards
   with user's id attached, uses bookmark show route to fill array.-->
   <div class="row">
-    <div class="card col s5" ng-repeat="quote in ctrl.userQuotes">
+    <div class="card col s12 m6" ng-repeat="quote in ctrl.userQuotes">
       <div class="card-content">
-        <span class="card-title">{{quote.body}}</span>
-        <p>{{quote.name}}</p>
+        <span class="card-title center">{{quote.name}}</span>
+        <p>{{quote.body}}</p>
         <p>{{quote.auther}}</p>
-      </div>
-      <div class="card-tabs">
-        <ul class="tabs tabs-fixed-width">
-          <li class="tab"><a class="active" href="#tags">Tags</a></li>
-          <li class="tab" ng-click="ctrl.openupdateForm($index)"><a href="#edit">Edit</a></li>
-          <li class="tab"><a href="#delete">Delete</a></li>
-        </ul>
-      </div>
-      <div class="card-content">
-        <div id="tags">
-          <ul>
+        <ul class="tags-ul">
           <li ng-repeat="tag in quote.tags">{{tag}}</li>
-          </ul>
+        </ul>
+
+        <div class="edit-and-delete-buttons">
+          <button class="btn-small" ng-if="ctrl.updateForm != $index" ng-click="ctrl.openUpdateForm($index)">Edit</button>
+          <button class="btn-small" ng-if="ctrl.updateForm === $index" ng-click="ctrl.closeUpdateForm()">Close Form</button>
+          <button ng-click="ctrl.deleteQuote(quote)">X</button>
         </div>
-        <div id="edit">
-          <div class="row editform" ng-if="ctrl.updateForm === $index">
+
+        <div ng-if="ctrl.updateForm === $index">
+          <div class="row editform">
             <div ng-include="'partials/editquote.html'" ></div>
           </div>
         </div>
-        <div id="delete">
-          <div class="row">
-            <div class="col s12">
-              <p>Are you sure you'd like to delete this card?</p>
-              <span><button class="btn-small" ng-click="ctrl.deleteQuote(quote)">X</button></span>
-            </div>
-          </div>
-        </div>
+
+
+
       </div>
+    
     </div>
   </div>
 </div>

@@ -4,13 +4,15 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.loggedInUser = false
   this.loginForm = true;
   this.signupForm = false;
-  this.updateForm = null;
   this.createQuoteForm = {}
-  this.updatedQuoteForm = {}
   this.createForm = {}
   this.allQuotes = []
-  this.userQuotes = []
 
+  //Show Page
+  this.userQuotes = []
+  this.updatedQuoteForm = {}
+  this.updateForm = null;
+ 
   //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
   this.changePath= (path) => {
@@ -18,9 +20,13 @@ app.controller("CommonplaceController", ['$http', function($http) {
   }
 
   // OPEN EDIT FORM ON SHOW-PAGE.HTML
-  this.openupdateForm = (quoteIndex) => {
-    console.log('edit form triggered at index', quoteIndex);
+  this.openUpdateForm = (quoteIndex) => {
     this.updateForm = quoteIndex;
+  }
+
+  // CLOSE EDIT FORM ON SHOW-PAGE.HTML
+  this.closeUpdateForm = () => {
+    this.updateForm = null;
   }
 
   //GET ALL QUOTES IN COLLECTION
