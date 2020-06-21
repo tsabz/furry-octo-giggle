@@ -22,9 +22,7 @@ nav div {
 }
 
 nav div a {
-  text-decoration: none;
-  color: #000000;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 nav div a:hover {

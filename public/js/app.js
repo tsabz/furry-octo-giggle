@@ -4,17 +4,26 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.loggedInUser = false
   this.loginForm = true;
   this.signupForm = false;
-
+  this.updateForm = null;
+  this.createQuoteForm = {}
+  this.updatedQuoteForm = {}
   this.createForm = {}
   this.allQuotes = []
   this.userQuotes = []
 
+  //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
   this.changePath= (path) => {
     this.includePath = 'partials/' + path
   }
 
+  // OPEN EDIT FORM ON SHOW-PAGE.HTML
+  this.openupdateForm = (quoteIndex) => {
+    console.log('edit form triggered at index', quoteIndex);
+    this.updateForm = quoteIndex;
+  }
 
+  //GET ALL QUOTES IN COLLECTION
   this.getQuotes = () => {
     console.log('===================== Getting all quotes ===============');
     $http(
@@ -31,6 +40,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
     )
   }
 
+  // GET ALL QUOTES BY LOGGED IN USER
   this.getUserQuotes = () => {
     console.log('===================== Getting user quotes ===============');
     $http(
@@ -50,30 +60,60 @@ app.controller("CommonplaceController", ['$http', function($http) {
     )
   }
 
+  // CREATE A QUOTE
   this.createQuote = () => {
-    this.tagsArray = this.tags.split(',');
+    this.tagsArray = this.createQuoteForm.tags.split(',');
+    this.createQuoteForm.tags = this.tagsArray;
+    this.createQuoteForm.postedBy = this.loggedInUser._id;
     $http({
       method: 'POST',
       url: '/quotes',
-      data: {
-        name: this.name,
-        body: this.body,
-        author: this.author,
-        image: this.image,
-        tags: this.tagsArray,
-        public: this.public,
-        postedBy: this.loggedInUser._id,
-    
-      }
+      data: this.createQuoteForm
     }).then( 
         response => {
         console.log(response); 
         this.allQuotes.unshift(response.data)
-        this.createQuoteForm = {}     
+        this.userQuotes.unshift(response.data)
+        this.createQuoteForm = {};
       }, error => 
       {
         console.log(error);
       });
+  }
+
+  // EDIT QUOTES
+  this.editQuote = (quote) => {
+    $http({
+      method: 'PUT',
+      url: '/quotes/' + quote._id,  
+      data: this.updatedQuoteForm
+    }).then(
+      response => {
+        console.log(response);
+        this.getQuotes();
+        this.getUserQuotes();
+        this.updatedQuoteForm = {};
+      }, error => {
+          console.log(error);
+      }
+    )
+  }
+
+  // DELETE QUOTE
+  this.deleteQuote = (quote) => {
+    $http({
+      method: 'DELETE',
+      url: '/quotes/' + quote._id
+    }).then(
+        response => {
+          console.log(response.data);
+          this.getQuotes();
+          this.getUserQuotes();
+        }, error => { 
+          console.log(error);
+          
+        }
+    )
   }
 
   //toggle between signup and login forms

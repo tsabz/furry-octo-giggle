@@ -1,0 +1,30 @@
+<form class="col s6" ng-submit="ctrl.editQuote(quote)"> 
+  <div class="row">
+  <div class="input-field col s6">
+    <input type="text" class="active" name="name" ng-model="ctrl.updatedQuoteForm.name" ng-value="quote.name">
+    <label for="name">Name Your Quote: </label> 
+  </div>
+  <div class="input-field col s6">
+    <label for="Author">Author: </label>
+    <input type="text" class="active" name="Author" ng-model="ctrl.updatedQuoteForm.author" ng-value="quote.author">
+  </div>
+
+  </div>
+  
+  <label for="body">Your Quote: </label>
+  <textarea name="body" ng-model="ctrl.updatedQuoteForm.body" ng-value="quote.body"></textarea>
+  
+  <label for="tags">Enter your category tags, seperated by commas </label>
+  <input type="text" name="tags" ng-model="ctrl.updatedQuoteForm.tags" ng-value="quote.tags">
+
+  <div class="switch">
+  <label> 
+    Private 
+    <input type="checkbox" name="public" ng-model="ctrl.updatedQuoteForm.public" ng-value="quote.public">
+    <span class="lever"></span>
+    Public
+  </label>
+  </div>
+
+  <input type="submit" value="Edit Quote">
+</form>
