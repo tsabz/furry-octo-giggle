@@ -1,13 +1,17 @@
+
 <h2>card section test</h2>
 <div>Bookmark Place</div>
 <div class="container">
-    <div ng-reapeat="quote in ctrl.allQuotes">
-    <p>quote.body</p>
-    <p>quote.name</p>
-    <p>quote.body</p>
-    <p>quote.author</p>
-    <p>quote.tags</p>    
-</div>
+    <p>Length {{ctrl.allQuotes.length}}</p>
+    <div ng-repeat="quote in ctrl.allQuotes">
+        <p>{{ctrl.userQuotes.length}}</p>
+        <p>This is a new quote</p>
+        <p>body: {{quote.body}}</p>
+        <p>name: {{quote.name}}</p>
+        <p>body: {{quote.body}}</p>
+        <p>author: {{quote.author}}</p>
+        <p>tags: {{quote.tags}}</p>    
+    </div>
 
 <!-- <form ng-submit="ctrl.createBookmark()">
     <input type="text" ng-model="ctrl.createBookmarkForm.name" name="name" placeholder="name"/>
