@@ -13,18 +13,26 @@ router.get('/', (req, res) => {
 
 //CREATE
 router.post('/', (req, res) => {
-  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
-  User.create(
-  {
-   firstname: req.body.firstname,
-   lastname: req.body.lastname,
-   password: req.body.password,
-   username: req.body.username
-  }, (err, createdUser) => {
-    if (err){
-      res.send(err)
+  User.find({username: req.body.username}, (err, duplicateName) => {
+    if (Object.keys(duplicateName).length > 0){
+      res.json({
+        errorMessage: "That username is already in use - please use a unique username"
+      })
     } else {
-      res.json(createdUser)
+      req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+      User.create(
+      {
+       firstname: req.body.firstname,
+       lastname: req.body.lastname,
+       password: req.body.password,
+       username: req.body.username
+      }, (err, createdUser) => {
+        if (err){
+          res.json(err)
+        } else {
+          res.json(createdUser)
+        }
+      })
     }
   })
 })
