@@ -17,6 +17,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.includePath = 'partials/card-section.html';
   this.changePath= (path) => {
     this.includePath = 'partials/' + path
+    this.showDropdown = false;
   }
 
   // MAKE NAV BAR RESPONSIVE

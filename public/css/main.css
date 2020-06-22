@@ -21,6 +21,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 2px 2px 2px #445a64;
+          box-shadow: 2px 2px 2px #445a64;
+  z-index: 100;
 }
 
 .drop-down-ul .drop-down-menu li {
@@ -28,7 +31,7 @@
 }
 
 .drop-down-ul .drop-down-menu li a {
-  color: #000000;
+  color: #445a64;
   text-transform: uppercase;
 }
 
