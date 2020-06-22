@@ -4,18 +4,40 @@ html, body {
   width: 100%;
 }
 
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .container {
   width: 80%;
   margin: auto;
+}
+
+.editform {
+  position: absolute;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  -webkit-box-shadow: 2px 2px 4px #cccccc;
+          box-shadow: 2px 2px 4px #cccccc;
 }
 
 .drop-down-ul .drop-down-menu {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
   position: absolute;
-  margin: 0;
+  margin: auto;
   left: 0;
   background-color: #ffffff;
+  width: 100%;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,16 +55,19 @@ html, body {
 }
 
 .drop-down-ul .drop-down-menu li {
-  padding: 0 1rem;
+  padding: 0 auto;
+  width: 100%;
 }
 
 .drop-down-ul .drop-down-menu li a {
   color: #445a64;
   text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.02rem;
 }
 
 .drop-down-ul .drop-down-menu li:hover {
-  background-color: #ccc;
+  text-shadow: 2px 2px 2px #fff;
 }
 
 .card-section > div > div {
@@ -69,16 +94,8 @@ html, body {
 .show-page-banner h2, .show-page-banner h3 {
   font-family: "Playfair Display", serif;
   font-weight: 600;
-  color: #ad6134;
-}
-
-.show-page-banner h2 {
   font-size: 3rem;
-  letter-spacing: 0.03rem;
-}
-
-.show-page-banner h3 {
-  font-size: 2rem;
+  color: #000000;
   letter-spacing: 0.03rem;
 }
 
@@ -210,20 +227,5 @@ html, body {
   margin-left: 10px;
   font-size: 10px;
   text-transform: uppercase;
-}
-
-.editform {
-  position: absolute;
-  overflow-y: scroll;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  background-color: #fff;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  -webkit-box-shadow: 2px 2px 4px #cccccc;
-          box-shadow: 2px 2px 4px #cccccc;
 }
 /*# sourceMappingURL=main.css.map */

@@ -10,18 +10,9 @@
   margin: 2em auto;
 
     h2, h3 {
-      font-family: $playfair;
-      font-weight: $md-weight;
-      color: $brown;
+      @include secondaryheaderfont(#000000);
     }
-    h2 {
-      font-size: $lg-size;
-      letter-spacing: $md-lg-spacing;
-    }
-    h3 {
-      font-size: $md-size;
-      letter-spacing: $md-lg-spacing;
-    }
+
   }
 
 
@@ -73,14 +64,8 @@
 
 //style elements drawn from https://codepen.io/hannahlivnat/pen/wvMJmyw
 .quotebody {
-  max-height: 200px;
-  overflow-y: scroll;
-  color: $darkgrey;
-  display: inline-block;
-  margin: .5rem 0;
-  padding: 20px 30px 30px 20px;
-  text-align: left;
-  font-size: 2rem;
+  @include quoteformatting(200px);
+
   .author {
     position: relative;
     display: block;
@@ -114,16 +99,3 @@
   }
 }
 
-.editform {
-  position: absolute;
-  overflow-y: scroll;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  background-color: #fff; 
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  box-shadow: 2px 2px 4px #cccccc;
-}
