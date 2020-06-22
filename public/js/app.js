@@ -24,7 +24,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.updateForm = null;
 
   // Switch Behavior on form 
-  this.isSwitchedOn = false;
+  this.isSwitchedOn = true;
 
   //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
@@ -43,6 +43,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
   // OPEN EDIT FORM ON SHOW-PAGE.HTML
   this.openUpdateForm = (quoteIndex) => {
     this.updateForm = quoteIndex;
+    this.isSwitchedOn = true;
   }
 
   // CLOSE EDIT FORM ON SHOW-PAGE.HTML
@@ -121,6 +122,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
         this.getQuotes();
         this.getUserQuotes();
         this.updatedQuoteForm = {};
+        this.closeUpdateForm();
       }, error => {
           console.log(error);
       }
