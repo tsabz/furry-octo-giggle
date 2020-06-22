@@ -25,9 +25,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
 
   // Switch Behavior on form 
   this.isSwitchedOn = false;
-  this.changeSwtich = () => {
-    this.isSwitchedOn = !this.isSwitchedOn;
-  }
 
   //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
@@ -172,17 +169,10 @@ app.controller("CommonplaceController", ['$http', function($http) {
       data: this.createForm
     }).then((response) => {
       console.log(response.data)
-      if (response.data._id){
-        this.loggedInUser = response.data
-        this.createForm = {}
-        this.getUserQuotes()
-        this.getQuotes()
-      } else if (response.data.errorMessage){
-        this.errorExists = true;
-        this.errorMessage = response.data.errorMessage;
-      }
-    }, error => {
-      console.log(error)
+      this.loggedInUser = response.data
+      this.createForm = {}
+      this.getUserQuotes()
+      this.getQuotes()
     })
   }
 
