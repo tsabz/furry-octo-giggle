@@ -6,7 +6,8 @@
         "_layout.scss",
         "_forms.scss",
         "_nav.scss",
-        "_showpage.scss"
+        "_showpage.scss",
+        "_cardsection.scss"
     ],
     "names": [],
     "file": "main.css"
