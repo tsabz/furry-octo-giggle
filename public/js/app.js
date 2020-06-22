@@ -8,7 +8,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.createForm = {}
   this.allQuotes = []
 
-  //Show Page
+  // SHOW PAGE
   this.userQuotes = []
   this.updatedQuoteForm = {}
   this.updateForm = null;
@@ -18,6 +18,13 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.changePath= (path) => {
     this.includePath = 'partials/' + path
   }
+
+  // MAKE NAV BAR RESPONSIVE
+  this.showDropdown = false;
+  this.toggleDropdown = () => {
+    this.showDropdown = !this.showDropdown
+  }
+
 
   // OPEN EDIT FORM ON SHOW-PAGE.HTML
   this.openUpdateForm = (quoteIndex) => {
