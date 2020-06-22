@@ -3,9 +3,111 @@
   margin: auto;
 }
 
-nav div {
-  width: 100%;
-  padding: 5px 20px;
+.drop-down-ul .drop-down-menu {
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  position: absolute;
+  margin: 0;
+  left: 0;
+  background-color: #ffffff;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 2px 2px 2px #445a64;
+          box-shadow: 2px 2px 2px #445a64;
+  z-index: 100;
+}
+
+.drop-down-ul .drop-down-menu li {
+  padding: 0 1rem;
+}
+
+.drop-down-ul .drop-down-menu li a {
+  color: #445a64;
+  text-transform: uppercase;
+}
+
+.drop-down-ul .drop-down-menu li:hover {
+  background-color: #ccc;
+}
+
+.tags-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tags-ul li {
+  color: #fff;
+  padding: .1rem .2rem;
+  text-transform: uppercase;
+}
+
+.top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-bar p {
+  font-size: 1.5rem;
+}
+
+.quotebody {
+  max-height: 200px;
+  overflow-y: scroll;
+  display: inline-block;
+  margin: 1.5rem 0;
+  padding: 40px 30px 30px 40px;
+  text-align: left;
+  font-size: 2rem;
+}
+
+.quotebody .author {
+  position: relative;
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+  color: #999;
+}
+
+.quotebody i {
+  position: relative;
+  background: #eee;
+  padding-left: 5px;
+  font-size: 1rem;
+  z-index: 5;
+}
+
+.edit-and-delete-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,16 +118,15 @@ nav div {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 2rem;
 }
 
-nav div a {
-  margin-left: 15px;
-}
-
-nav div a:hover {
-  text-decoration: underline;
+.edit-and-delete-buttons button {
+  margin-left: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=main.css.map */

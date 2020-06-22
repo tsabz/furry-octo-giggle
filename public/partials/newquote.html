@@ -1,13 +1,38 @@
 <form ng-submit="ctrl.createQuote()">
-  <label for="name">Name Your Quote: </label>
-  <input type="text" name="name" ng-model="ctrl.createQuoteForm.name" placeholder="Name for Quote">
-  <label for="body">Your Quote: </label>
-  <textarea name="body" ng-model="ctrl.createQuoteForm.body" placeholder="Quote"></textarea>
-  <label for="Author">Author: </label>
-  <input type="text" name="Author" ng-model="ctrl.createQuoteForm.author" placeholder="Author">
-  <label for="tags">Enter your category tags, seperated by commas </label>
-  <input type="text" name="tags" ng-model="ctrl.createQuoteForm.tags" placeholder="tags separated by comma">
-  <label for="public">Share this Quote to the Feed:  </label>
-  <input type="checkbox" name="public" ng-model="ctrl.createQuoteForm.public">
-  <input type="submit" value="Create Quote">
+  <h2>Add to Your Collection: </h2>
+  <div class="row">
+    <div class="input-field col s6">
+      <input type="text"  name="name" ng-model="ctrl.createQuoteForm.name">
+      <label for="name">Name Your Quote: </label> 
+    </div>
+    <div class="input-field col s6">
+      <input type="text"  name="Author" ng-model="ctrl.createQuoteForm.author">
+      <label for="Author">Author: </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea class="materialize-textarea" id="edit-textarea" name="body" ng-model="ctrl.createQuoteForm.body"></textarea>
+      <label for="body">Your Quote: </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="tags" ng-model="ctrl.createQuoteForm.tags">
+      <label for="tags">Enter your category tags, seperated by commas </label>
+    </div>
+  </div>
+  <div class="row center">
+    <div class="switch">
+      <label> 
+        Private 
+        <input type="checkbox" name="public" ng-model="ctrl.createQuoteForm.public">
+        <span class="lever"></span>
+        Public
+      </label>
+    </div>
+  </div>
+  <div class="row center">
+    <input class="btn-small" type="submit" value="Create Quote">
+  </div> 
 </form>
