@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400");
 .container {
   width: 80%;
   margin: auto;
@@ -37,6 +38,44 @@
 
 .drop-down-ul .drop-down-menu li:hover {
   background-color: #ccc;
+}
+
+.show-page-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 2em auto;
+}
+
+.show-page-banner h2, .show-page-banner h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  color: #ad6134;
+}
+
+.show-page-banner h2 {
+  font-size: 3rem;
+  letter-spacing: 0.03rem;
+}
+
+.show-page-banner h3 {
+  font-size: 2rem;
+  letter-spacing: 0.03rem;
+}
+
+.card {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
 .tags-ul {
@@ -128,5 +167,20 @@
   margin-left: 10px;
   font-size: 10px;
   text-transform: uppercase;
+}
+
+.editform {
+  position: absolute;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  -webkit-box-shadow: 2px 2px 4px #cccccc;
+          box-shadow: 2px 2px 4px #cccccc;
 }
 /*# sourceMappingURL=main.css.map */

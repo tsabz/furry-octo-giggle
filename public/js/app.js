@@ -22,7 +22,12 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.userQuotes = []
   this.updatedQuoteForm = {}
   this.updateForm = null;
- 
+
+  // Switch Behavior on form 
+  this.isSwitchedOn = false;
+  this.changeSwtich = () => {
+    this.isSwitchedOn = !this.isSwitchedOn;
+  }
 
   //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
@@ -108,6 +113,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
 
   // EDIT QUOTES
   this.editQuote = (quote) => {
+    this.updatedQuoteForm.public = this.isSwitchedOn;
     $http({
       method: 'PUT',
       url: '/quotes/' + quote._id,  

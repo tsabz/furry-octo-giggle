@@ -1,4 +1,8 @@
-<h2 class="center">{{ctrl.loggedInUser.firstname}}'s Commonplace Book</h2>
+<div class="show-page-container">
+  <div class="show-page-banner">
+      <h2 class="center">{{ctrl.loggedInUser.firstname}}</h2>
+      <h3>CommonPlace Collection</h3>
+  </div>
 <div class="card-section">
   <!-- Need to add an array into app.js that is specific to cards
   with user's id attached, uses bookmark show route to fill array.-->
@@ -9,9 +13,8 @@
             <p>{{quote.name}}</p>
             <div class="edit-and-delete-buttons">
               <button class="btn-small" ng-if="ctrl.updateForm != $index" ng-click="ctrl.openUpdateForm($index)">Edit</button>
-              <button class="btn-small" ng-if="ctrl.updateForm === $index" ng-click="ctrl.closeUpdateForm()">Close Form</button>
               <button class="btn-small" ng-click="ctrl.deleteQuote(quote)">X</button>
-          </div>
+            </div>
           </div>
           
         <h2 class="quotebody">{{quote.body}}
@@ -20,18 +23,14 @@
           <li class="blue-grey" ng-repeat="tag in quote.tags">{{tag}}</li>
         </ul>
 
-
-
-        <div ng-if="ctrl.updateForm === $index">
-          <div class="row editform">
+        <div class="editform"ng-if="ctrl.updateForm === $index">
+          <div class="row">
             <div ng-include="'partials/editquote.html'" ></div>
           </div>
         </div>
-
-
-
       </div>
-    
     </div>
   </div>
+</div>
+
 </div>

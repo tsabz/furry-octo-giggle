@@ -1,3 +1,31 @@
+.show-page-banner { 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 2em auto;
+
+    h2, h3 {
+      font-family: $playfair;
+      font-weight: $md-weight;
+      color: $brown;
+    }
+    h2 {
+      font-size: $lg-size;
+      letter-spacing: $md-lg-spacing;
+    }
+    h3 {
+      font-size: $md-size;
+      letter-spacing: $md-lg-spacing;
+    }
+  }
+
+
+.card {
+  font-family: $poppins;
+  font-weight: $thin-weight;
+}
+
 .tags-ul {
   display: flex;
   flex-flow: row wrap; 
@@ -62,4 +90,18 @@
     font-size: 10px;
     text-transform: uppercase;
   }
+}
+
+.editform {
+  position: absolute;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background-color: #fff; 
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  box-shadow: 2px 2px 4px #cccccc;
 }

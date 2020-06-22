@@ -1,5 +1,8 @@
 <form class="col s12" ng-submit="ctrl.editQuote(quote)"> 
   <div class="row">
+    <button class="btn-small" ng-if="ctrl.updateForm === $index" ng-click="ctrl.closeUpdateForm()">Close Form</button>
+  </div>
+  <div class="row">
   <div class="input-field col s6">
     <input type="text"  name="name" ng-model="ctrl.updatedQuoteForm.name" ng-value="quote.name">
     <label class="active" for="name">Name Your Quote: </label> 
@@ -25,10 +28,13 @@
     <div class="switch">
       <label> 
         Private 
-        <input type="checkbox" name="public" ng-model="ctrl.updatedQuoteForm.public" ng-value="quote.public">
+        <input type="checkbox" name="public" 
+        ng-click="ctrl.isSwitchedOn = !ctrl.isSwitchedOn"
+        >
         <span class="lever"></span>
         Public
       </label>
+      <p>Am I switched on? <b>{{ctrl.isSwitchedOn == true ? 'True' : 'False'}}</b></p>
     </div>
   </div>
   <div class="row center">
