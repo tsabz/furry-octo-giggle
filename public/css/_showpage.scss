@@ -1,3 +1,40 @@
+.card-section > div > div {
+  padding: 0;
+}
+
+.show-page-banner { 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 2em auto;
+
+    h2, h3 {
+      font-family: $playfair;
+      font-weight: $md-weight;
+      color: $brown;
+    }
+    h2 {
+      font-size: $lg-size;
+      letter-spacing: $md-lg-spacing;
+    }
+    h3 {
+      font-size: $md-size;
+      letter-spacing: $md-lg-spacing;
+    }
+  }
+
+
+.card-content {
+  height: 100%;
+  margin: auto;
+  font-family: $poppins;
+  font-weight: $thin-weight;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .tags-ul {
   display: flex;
   flex-flow: row wrap; 
@@ -5,7 +42,7 @@
   align-items: center;
 
   li {
-    color: #fff;
+    color: $white;
     padding: .1rem .2rem;
     text-transform: uppercase;
   }
@@ -15,10 +52,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
-  p {
-    font-size: 1.5rem;
+  .right-top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .material-icons {
+      margin-right: 15px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      letter-spacing: $sm-spacing;
+    }
   }
 }
 
@@ -26,9 +75,10 @@
 .quotebody {
   max-height: 200px;
   overflow-y: scroll;
+  color: $darkgrey;
   display: inline-block;
-  margin: 1.5rem 0;
-  padding: 40px 30px 30px 40px;
+  margin: .5rem 0;
+  padding: 20px 30px 30px 20px;
   text-align: left;
   font-size: 2rem;
   .author {
@@ -36,7 +86,7 @@
     display: block;
     text-align: right;
     margin-top: 5px;
-    color: #999;
+    color: $darkgrey;
   }
 
   i {
@@ -54,7 +104,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 2rem;
   
   button {
@@ -62,4 +112,18 @@
     font-size: 10px;
     text-transform: uppercase;
   }
+}
+
+.editform {
+  position: absolute;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background-color: #fff; 
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  box-shadow: 2px 2px 4px #cccccc;
 }
