@@ -18,19 +18,12 @@ app.controller("CommonplaceController", ['$http', function($http) {
     this.errorMessage = ""
   }
 
-  // SHOW PAGE
-  this.userQuotes = []
-  this.updatedQuoteForm = {}
-  this.updateForm = null;
-
-  // Switch Behavior on form 
-  this.isSwitchedOn = true;
-
   //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
   this.changePath= (path) => {
     this.includePath = 'partials/' + path
     this.showDropdown = false;
+    this.isSwitchedOn = true;
   }
 
   // MAKE NAV BAR RESPONSIVE
@@ -39,14 +32,20 @@ app.controller("CommonplaceController", ['$http', function($http) {
     this.showDropdown = !this.showDropdown
   }
 
+  // SHOW PAGE
+  this.userQuotes = []
+  this.updatedQuoteForm = {}
+  this.updateForm = null;
 
-  // OPEN EDIT FORM ON SHOW-PAGE.HTML
+  // Switch Behavior on form 
+  this.isSwitchedOn = true;
+
+  // OPEN AND CLOSE EDIT FORM ON SHOW-PAGE.HTML
   this.openUpdateForm = (quoteIndex) => {
     this.updateForm = quoteIndex;
     this.isSwitchedOn = true;
   }
 
-  // CLOSE EDIT FORM ON SHOW-PAGE.HTML
   this.closeUpdateForm = () => {
     this.updateForm = null;
   }
@@ -93,6 +92,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
     this.tagsArray = this.createQuoteForm.tags.split(',');
     this.createQuoteForm.tags = this.tagsArray;
     this.createQuoteForm.postedBy = this.loggedInUser._id;
+    this.createQuoteForm.public = this.isSwitchedOn;
     $http({
       method: 'POST',
       url: '/quotes',
@@ -103,6 +103,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
         this.allQuotes.unshift(response.data)
         this.userQuotes.unshift(response.data)
         this.createQuoteForm = {};
+        this.changePath('show-page.html')
       }, error => 
       {
         console.log(error);
