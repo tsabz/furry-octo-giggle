@@ -16,21 +16,18 @@
     <ul class="hide-on-large-only drop-down-ul">
       <a class="sidenav-trigger"><i class="material-icons" ng-click="ctrl.toggleDropdown()">menu</i></a>
       <ul ng-if="ctrl.showDropdown" class="drop-down-menu">
-        <li><a ng-click="ctrl.toggleDropdown()">X</a></li>
+        <li><a class="left" ng-click="ctrl.toggleDropdown()">X</a></li>
         <li>
-          <a ng-click="ctrl.changePath('card-section.html')" >Quotes Feed</a>
+          <a class="center" ng-click="ctrl.changePath('card-section.html')" >Quotes Feed</a>
         </li>
         <li>
-          <a ng-click="ctrl.changePath('show-page.html')" >My Commonplace Book</a>
+          <a class="center" ng-click="ctrl.changePath('show-page.html')" >My Commonplace Book</a>
         </li>
         <li>
-          <a ng-click="ctrl.changePath('newquote.html')">Add New Quote</a>
-        </li>
-        <li>
-          <a href="#" >My Account</a>
+          <a class="center" ng-click="ctrl.changePath('newquote.html')">Add New Quote</a>
         </li>
         <li> 
-          <a href="#"  ng-click="ctrl.logout()">Logout</a>
+          <a class="center" href="#"  ng-click="ctrl.logout()">Logout</a>
         </li>
       </ul>
     </ul>
@@ -44,9 +41,6 @@
       </li>
       <li>
        <a ng-click="ctrl.changePath('newquote.html')">Add New Quote</a>
-      </li>
-      <li>
-       <a href="#" >My Account</a>
       </li>
       <li> 
         <a href="#"  ng-click="ctrl.logout()">Logout</a>

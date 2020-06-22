@@ -1,3 +1,15 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  //background-image: url('https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .container {
   width: 80%;
   margin: auto;

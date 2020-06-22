@@ -18,17 +18,12 @@ app.controller("CommonplaceController", ['$http', function($http) {
     this.errorMessage = ""
   }
 
-  // SHOW PAGE
-  this.userQuotes = []
-  this.updatedQuoteForm = {}
-  this.updateForm = null;
- 
-
   //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
   this.changePath= (path) => {
     this.includePath = 'partials/' + path
     this.showDropdown = false;
+    this.isSwitchedOn = true;
   }
 
   // MAKE NAV BAR RESPONSIVE
@@ -37,20 +32,26 @@ app.controller("CommonplaceController", ['$http', function($http) {
     this.showDropdown = !this.showDropdown
   }
 
+  // SHOW PAGE
+  this.userQuotes = []
+  this.updatedQuoteForm = {}
+  this.updateForm = null;
 
-  // OPEN EDIT FORM ON SHOW-PAGE.HTML
+  // Switch Behavior on form 
+  this.isSwitchedOn = true;
+
+  // OPEN AND CLOSE EDIT FORM ON SHOW-PAGE.HTML
   this.openUpdateForm = (quoteIndex) => {
     this.updateForm = quoteIndex;
+    this.isSwitchedOn = true;
   }
 
-  // CLOSE EDIT FORM ON SHOW-PAGE.HTML
   this.closeUpdateForm = () => {
     this.updateForm = null;
   }
 
   //GET ALL QUOTES IN COLLECTION
   this.getQuotes = () => {
-    console.log('===================== Getting all quotes ===============');
     $http(
       {
         method: 'GET',
@@ -58,16 +59,13 @@ app.controller("CommonplaceController", ['$http', function($http) {
       }
     ).then (
       response => {        
-        console.log(response);
         this.allQuotes = response.data
-        console.log(`loading all quotes... ${JSON.stringify(this.allQuotes[0])}`);
       }
     )
   }
 
   // GET ALL QUOTES BY LOGGED IN USER
   this.getUserQuotes = () => {
-    console.log('===================== Getting user quotes ===============');
     $http(
       {
         method: 'GET',
@@ -76,7 +74,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
     ).then(
       response => {
         this.userQuotes = response.data
-        console.log(this.userQuotes);       
       },
       error => {
         console.log(error.message);
@@ -90,16 +87,17 @@ app.controller("CommonplaceController", ['$http', function($http) {
     this.tagsArray = this.createQuoteForm.tags.split(',');
     this.createQuoteForm.tags = this.tagsArray;
     this.createQuoteForm.postedBy = this.loggedInUser._id;
+    this.createQuoteForm.public = this.isSwitchedOn;
     $http({
       method: 'POST',
       url: '/quotes',
       data: this.createQuoteForm
     }).then( 
         response => {
-        console.log(response); 
         this.allQuotes.unshift(response.data)
         this.userQuotes.unshift(response.data)
         this.createQuoteForm = {};
+        this.changePath('show-page.html')
       }, error => 
       {
         console.log(error);
@@ -108,16 +106,17 @@ app.controller("CommonplaceController", ['$http', function($http) {
 
   // EDIT QUOTES
   this.editQuote = (quote) => {
+    this.updatedQuoteForm.public = this.isSwitchedOn;
     $http({
       method: 'PUT',
       url: '/quotes/' + quote._id,  
       data: this.updatedQuoteForm
     }).then(
       response => {
-        console.log(response);
         this.getQuotes();
         this.getUserQuotes();
         this.updatedQuoteForm = {};
+        this.closeUpdateForm();
       }, error => {
           console.log(error);
       }
@@ -131,7 +130,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       url: '/quotes/' + quote._id
     }).then(
         response => {
-          console.log(response.data);
           this.getQuotes();
           this.getUserQuotes();
         }, error => { 
@@ -165,18 +163,10 @@ app.controller("CommonplaceController", ['$http', function($http) {
       method: 'POST',
       data: this.createForm
     }).then((response) => {
-      console.log(response.data)
-      if (response.data._id){
-        this.loggedInUser = response.data
-        this.createForm = {}
-        this.getUserQuotes()
-        this.getQuotes()
-      } else if (response.data.errorMessage){
-        this.errorExists = true;
-        this.errorMessage = response.data.errorMessage;
-      }
-    }, error => {
-      console.log(error)
+      this.loggedInUser = response.data
+      this.createForm = {}
+      this.getUserQuotes()
+      this.getQuotes()
     })
   }
 
@@ -188,13 +178,10 @@ app.controller("CommonplaceController", ['$http', function($http) {
       data: this.createForm
     }).then((response) => {
       if (response.data.username){
-        console.log(response.data)
         this.loggedInUser = response.data
         this.createForm = {}
         this.getUserQuotes()
         this.getQuotes()
-        console.log(`quotes array ${this.allQuotes}`)
-        console.log(`size of all quotes array ${this.userQuotes.length}`)
 
       } else {
         console.log(response.data.errorMessage)
@@ -214,7 +201,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       url: '/session',
       method: 'DELETE'
     }).then((response) => {
-      console.log(response.data)
       this.loggedInUser = false;
     })
   }

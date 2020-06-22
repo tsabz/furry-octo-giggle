@@ -1,16 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400");
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .container {
   width: 80%;
   margin: auto;
+}
+
+.editform {
+  position: absolute;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  -webkit-box-shadow: 2px 2px 4px #cccccc;
+          box-shadow: 2px 2px 4px #cccccc;
 }
 
 .drop-down-ul .drop-down-menu {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
   position: absolute;
-  margin: 0;
+  margin: auto;
   left: 0;
   background-color: #ffffff;
+  width: 100%;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28,16 +55,65 @@
 }
 
 .drop-down-ul .drop-down-menu li {
-  padding: 0 1rem;
+  padding: 0 auto;
+  width: 100%;
 }
 
 .drop-down-ul .drop-down-menu li a {
   color: #445a64;
   text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.02rem;
 }
 
 .drop-down-ul .drop-down-menu li:hover {
-  background-color: #ccc;
+  text-shadow: 2px 2px 2px #fff;
+}
+
+.card-section > div > div {
+  padding: 0;
+}
+
+.show-page-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 2em auto;
+}
+
+.show-page-banner h2, .show-page-banner h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: #000000;
+  letter-spacing: 0.03rem;
+}
+
+.card-content {
+  height: 100%;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .tags-ul {
@@ -73,21 +149,43 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.top-bar .right-top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.top-bar p {
+.top-bar .right-top-bar .material-icons {
+  margin-right: 15px;
+}
+
+.top-bar .right-top-bar p {
   font-size: 1.5rem;
+  letter-spacing: 0.02rem;
 }
 
 .quotebody {
   max-height: 200px;
   overflow-y: scroll;
+  color: #999;
   display: inline-block;
-  margin: 1.5rem 0;
-  padding: 40px 30px 30px 40px;
+  margin: .5rem 0;
+  padding: 20px 30px 30px 20px;
   text-align: left;
   font-size: 2rem;
 }
@@ -119,9 +217,9 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 2rem;
 }
 

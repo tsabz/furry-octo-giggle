@@ -1,7 +1,9 @@
 // colors
-$almond : #ceafaa;
-$darkblue : #26374c;
-$brown: #ad6134;
+$darkblue : #374852;
+$brightgreen: #80ae86;
+$neutral-color: #e3e6dd;
+$white: #fff;
+$darkgrey: #999;
 
 //fonts
 $playfair: ('Playfair Display', serif);
@@ -23,6 +25,26 @@ $lg-size: 3rem;
 //letterspacing: 
 $sm-spacing: .02rem;
 $md-lg-spacing: .03rem;
+
+//element variables: 
+@mixin secondaryheaderfont($color) {
+  font-family: $playfair;
+  font-weight: $md-weight;
+  font-size: $lg-size;
+  color: $color;
+  letter-spacing: $md-lg-spacing;
+}
+
+@mixin quoteformatting($maxheight){
+  max-height: $maxheight;
+  overflow-y: scroll;
+  color: $darkgrey;
+  display: inline-block;
+  margin: .5rem 0;
+  padding: 20px 30px 30px 20px;
+  text-align: left;
+  font-size: 2rem;
+}
 
 
 //Breakpoints for Media Queries -- use @include bp(xs){} to implement on other pages
