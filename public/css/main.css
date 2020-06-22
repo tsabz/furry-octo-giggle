@@ -129,4 +129,23 @@
   font-size: 10px;
   text-transform: uppercase;
 }
+
+h2 {
+  color: #b7410e;
+  text-align: center;
+}
+
+body {
+  background-color: blanchedalmond;
+}
+
+.card-tabs {
+  background-color: #ede1ce;
+}
+
+.test4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=main.css.map */
