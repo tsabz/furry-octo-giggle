@@ -11,7 +11,10 @@
       <div class="card medium" >
         <div class="card-content">
             <div class="top-bar">
-              <p>{{quote.name}}</p>
+              <div class="right-top-bar">
+                <span class="material-icons md-dark" ng-if="quote.public === false">lock</span>
+                <p>{{quote.name}}</p>
+              </div>
               <div class="edit-and-delete-buttons">
                 <button class="btn-small" ng-if="ctrl.updateForm != $index" ng-click="ctrl.openUpdateForm($index)">Edit</button>
                 <button class="btn-small" ng-click="ctrl.deleteQuote(quote)">X</button>

@@ -137,8 +137,29 @@ html, body {
           align-items: flex-start;
 }
 
-.top-bar p {
+.top-bar .right-top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-bar .right-top-bar .material-icons {
+  margin-right: 15px;
+}
+
+.top-bar .right-top-bar p {
   font-size: 1.5rem;
+  letter-spacing: 0.02rem;
 }
 
 .quotebody {
@@ -179,9 +200,9 @@ html, body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 2rem;
 }
 
