@@ -1,0 +1,60 @@
+// colors
+$almond : #ceafaa;
+$darkblue : #26374c;
+$brown: #ad6134;
+
+//fonts
+$playfair: ('Playfair Display', serif);
+$poppins: ('Poppins', sans-serif);
+
+//font-weight:
+$thin-weight: 300;
+$normal-weight: 400;
+$md-weight: 600;
+$heavy-weight: 900;
+
+//font-size: 
+$xs-size: .7rem;
+$sm-size: 1rem;
+$md-size: 2rem;
+$lg-size: 3rem;
+
+
+//letterspacing: 
+$sm-spacing: .02rem;
+$md-lg-spacing: .03rem;
+
+
+//Breakpoints for Media Queries -- use @include bp(xs){} to implement on other pages
+@mixin bp($point) {
+
+  @if $point==xs {
+    @media only screen and (max-width: 350px) {
+      @content;
+    }
+  }
+
+  @else if $point==budgetbp {
+    @media only screen and (max-width: 620px) {
+      @content;
+    }
+  }
+
+  @else if $point==md {
+    @media only screen and (min-width: 800px) {
+      @content;
+    }
+  }
+
+  @else if $point==lg {
+    @media only screen and (min-width: 1000px) {
+      @content;
+    }
+  }
+
+  @else if $point==xl {
+    @media only screen and (min-width: 1300px) {
+      @content;
+    }
+  }
+}
