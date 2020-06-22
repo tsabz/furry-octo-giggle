@@ -11,6 +11,16 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.allQuotes = []
   this.userQuotes = []
 
+  //VARS FOR ERROR HANDLING
+  this.errorExists = false;
+  this.errorMessage = "";
+
+  //CLEAR ERROR 
+  this.clearError = () => {
+    this.errorExists = false;
+    this.errorMessage = ""
+  }
+
   //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
   this.changePath= (path) => {
@@ -165,8 +175,13 @@ app.controller("CommonplaceController", ['$http', function($http) {
         console.log(`size of all quotes array ${this.userQuotes.length}`)
 
       } else {
+        console.log(response.data.errorMessage)
+        this.errorMessage = response.data.errorMessage;
+        this.errorExists = true;
         this.createForm = {}
       }
+    }, error => {
+      console.log(error)
     })
 
   }
