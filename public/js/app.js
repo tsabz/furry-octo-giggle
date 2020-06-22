@@ -52,7 +52,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
 
   //GET ALL QUOTES IN COLLECTION
   this.getQuotes = () => {
-    console.log('===================== Getting all quotes ===============');
     $http(
       {
         method: 'GET',
@@ -60,16 +59,13 @@ app.controller("CommonplaceController", ['$http', function($http) {
       }
     ).then (
       response => {        
-        console.log(response);
         this.allQuotes = response.data
-        console.log(`loading all quotes... ${JSON.stringify(this.allQuotes[0])}`);
       }
     )
   }
 
   // GET ALL QUOTES BY LOGGED IN USER
   this.getUserQuotes = () => {
-    console.log('===================== Getting user quotes ===============');
     $http(
       {
         method: 'GET',
@@ -78,7 +74,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
     ).then(
       response => {
         this.userQuotes = response.data
-        console.log(this.userQuotes);       
       },
       error => {
         console.log(error.message);
@@ -99,7 +94,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       data: this.createQuoteForm
     }).then( 
         response => {
-        console.log(response); 
         this.allQuotes.unshift(response.data)
         this.userQuotes.unshift(response.data)
         this.createQuoteForm = {};
@@ -119,7 +113,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       data: this.updatedQuoteForm
     }).then(
       response => {
-        console.log(response);
         this.getQuotes();
         this.getUserQuotes();
         this.updatedQuoteForm = {};
@@ -137,7 +130,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       url: '/quotes/' + quote._id
     }).then(
         response => {
-          console.log(response.data);
           this.getQuotes();
           this.getUserQuotes();
         }, error => { 
@@ -171,7 +163,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       method: 'POST',
       data: this.createForm
     }).then((response) => {
-      console.log(response.data)
       this.loggedInUser = response.data
       this.createForm = {}
       this.getUserQuotes()
@@ -187,13 +178,10 @@ app.controller("CommonplaceController", ['$http', function($http) {
       data: this.createForm
     }).then((response) => {
       if (response.data.username){
-        console.log(response.data)
         this.loggedInUser = response.data
         this.createForm = {}
         this.getUserQuotes()
         this.getQuotes()
-        console.log(`quotes array ${this.allQuotes}`)
-        console.log(`size of all quotes array ${this.userQuotes.length}`)
 
       } else {
         console.log(response.data.errorMessage)
@@ -213,7 +201,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
       url: '/session',
       method: 'DELETE'
     }).then((response) => {
-      console.log(response.data)
       this.loggedInUser = false;
     })
   }
