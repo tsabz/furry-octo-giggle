@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400");
 .container {
   width: 80%;
   margin: auto;
@@ -136,7 +137,12 @@ h2 {
 }
 
 body {
-  background-color: blanchedalmond;
+  background-color: black;
+}
+
+.header {
+  background-image: url(https://images.unsplash.com/photo-1489513691500-41ef4acdb665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);
+  margin: 400px;
 }
 
 .card-tabs {
