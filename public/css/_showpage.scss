@@ -1,0 +1,65 @@
+.tags-ul {
+  display: flex;
+  flex-flow: row wrap; 
+  justify-content: space-evenly;
+  align-items: center;
+
+  li {
+    color: #fff;
+    padding: .1rem .2rem;
+    text-transform: uppercase;
+  }
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+//style elements drawn from https://codepen.io/hannahlivnat/pen/wvMJmyw
+.quotebody {
+  max-height: 200px;
+  overflow-y: scroll;
+  display: inline-block;
+  margin: 1.5rem 0;
+  padding: 40px 30px 30px 40px;
+  text-align: left;
+  font-size: 2rem;
+  .author {
+    position: relative;
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    color: #999;
+  }
+
+  i {
+    position: relative;
+    background: #eee;
+    padding-left: 5px;
+    font-size: 1rem;
+    z-index: 5;
+  }
+
+
+}
+
+.edit-and-delete-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  
+  button {
+    margin-left: 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+}

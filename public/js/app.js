@@ -4,23 +4,37 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.loggedInUser = false
   this.loginForm = true;
   this.signupForm = false;
-  this.updateForm = null;
   this.createQuoteForm = {}
-  this.updatedQuoteForm = {}
   this.createForm = {}
   this.allQuotes = []
-  this.userQuotes = []
 
+  // SHOW PAGE
+  this.userQuotes = []
+  this.updatedQuoteForm = {}
+  this.updateForm = null;
+ 
   //CHANGE PATH ON CLICK
   this.includePath = 'partials/card-section.html';
   this.changePath= (path) => {
     this.includePath = 'partials/' + path
+    this.showDropdown = false;
   }
 
+  // MAKE NAV BAR RESPONSIVE
+  this.showDropdown = false;
+  this.toggleDropdown = () => {
+    this.showDropdown = !this.showDropdown
+  }
+
+
   // OPEN EDIT FORM ON SHOW-PAGE.HTML
-  this.openupdateForm = (quoteIndex) => {
-    console.log('edit form triggered at index', quoteIndex);
+  this.openUpdateForm = (quoteIndex) => {
     this.updateForm = quoteIndex;
+  }
+
+  // CLOSE EDIT FORM ON SHOW-PAGE.HTML
+  this.closeUpdateForm = () => {
+    this.updateForm = null;
   }
 
   //GET ALL QUOTES IN COLLECTION

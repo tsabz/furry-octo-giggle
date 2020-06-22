@@ -1,23 +1,37 @@
-<h2>{{ctrl.loggedInUser.firstname}}'s Commonplace Book</h2>
+<h2 class="center">{{ctrl.loggedInUser.firstname}}'s Commonplace Book</h2>
 <div class="card-section">
-  <h2>This is the Show Page</h2>
   <!-- Need to add an array into app.js that is specific to cards
   with user's id attached, uses bookmark show route to fill array.-->
-  <div class="card" ng-repeat="quote in ctrl.userQuotes">
-    <div class="quote-section">{{quote.body}}</div>
-    <div class="quote-details-section">
-    <p>{{quote.name}}</p>
-    <p>{{quote.auther}}</p>
-    <button ng-click="ctrl.openupdateForm($index)">Edit</button>
-    <button ng-click="ctrl.deleteQuote(quote)">X</button>
-    </div>
-    <div class="tags">
-      <ul>
-          <li ng-repeat="tag in quote.tags">{{tag}}</li>
-      </ul>
-    </div>
-    <div class="row editform" ng-if="ctrl.updateForm === $index">
-      <div ng-include="'partials/editquote.html'" ></div>
+  <div class="row">
+    <div class="card medium col s12 l6" ng-repeat="quote in ctrl.userQuotes">
+      <div class="card-content">
+          <div class="top-bar">
+            <p>{{quote.name}}</p>
+            <div class="edit-and-delete-buttons">
+              <button class="btn-small" ng-if="ctrl.updateForm != $index" ng-click="ctrl.openUpdateForm($index)">Edit</button>
+              <button class="btn-small" ng-if="ctrl.updateForm === $index" ng-click="ctrl.closeUpdateForm()">Close Form</button>
+              <button class="btn-small" ng-click="ctrl.deleteQuote(quote)">X</button>
+          </div>
+          </div>
+          
+        <h2 class="quotebody">{{quote.body}}
+        <span class="author"><i>{{quote.author}}</i></span></h2>
+        <ul class="tags-ul">
+          <li class="blue-grey" ng-repeat="tag in quote.tags">{{tag}}</li>
+        </ul>
+
+
+
+        <div ng-if="ctrl.updateForm === $index">
+          <div class="row editform">
+            <div ng-include="'partials/editquote.html'" ></div>
+          </div>
+        </div>
+
+
+
+      </div>
+    
     </div>
   </div>
 </div>
