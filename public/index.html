@@ -14,8 +14,8 @@
 </head>
 <body ng-controller="CommonplaceController as ctrl">
   <nav ng-include="'partials/nav.html'"></nav>
+  <div id="errorContainer" class="container" ng-if="ctrl.errorExists" ng-include="'partials/error.html'"></div>
   <div class="container">
-
     <section ng-if="ctrl.loggedInUser === false">
       <div ng-if="ctrl.loginForm === true" ng-include="'partials/login.html'"></div>
       <div ng-if="ctrl.signupForm === true" ng-include="'partials/signup.html'"></div>

@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
     }
     if(foundUser === null){
       res.json({
-        message: 'user not found'
+        errorMessage: 'User Does Not Exist'
       });
     } else {
       const pwMatch = bcrypt.compareSync(req.body.password, foundUser.password);
@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
         res.json(foundUser)
       } else {
         res.json({
-          message: 'pw not found'
+          errorMessage: 'Password Incorrect'
         });
       }
     }
