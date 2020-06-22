@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400");
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 .container {
   width: 80%;
   margin: auto;
@@ -40,6 +45,10 @@
   background-color: #ccc;
 }
 
+.card-section > div > div {
+  padding: 0;
+}
+
 .show-page-banner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,9 +82,21 @@
   letter-spacing: 0.03rem;
 }
 
-.card {
+.card-content {
+  height: 100%;
+  margin: auto;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .tags-ul {
@@ -111,9 +132,9 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .top-bar p {
@@ -123,9 +144,10 @@
 .quotebody {
   max-height: 200px;
   overflow-y: scroll;
+  color: #999;
   display: inline-block;
-  margin: 1.5rem 0;
-  padding: 40px 30px 30px 40px;
+  margin: .5rem 0;
+  padding: 20px 30px 30px 20px;
   text-align: left;
   font-size: 2rem;
 }

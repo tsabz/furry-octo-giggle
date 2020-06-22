@@ -1,3 +1,7 @@
+.card-section > div > div {
+  padding: 0;
+}
+
 .show-page-banner { 
   display: flex;
   flex-direction: column;
@@ -21,9 +25,14 @@
   }
 
 
-.card {
+.card-content {
+  height: 100%;
+  margin: auto;
   font-family: $poppins;
   font-weight: $thin-weight;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .tags-ul {
@@ -43,7 +52,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   p {
     font-size: 1.5rem;
@@ -54,9 +63,10 @@
 .quotebody {
   max-height: 200px;
   overflow-y: scroll;
+  color: $darkgrey;
   display: inline-block;
-  margin: 1.5rem 0;
-  padding: 40px 30px 30px 40px;
+  margin: .5rem 0;
+  padding: 20px 30px 30px 20px;
   text-align: left;
   font-size: 2rem;
   .author {
@@ -64,7 +74,7 @@
     display: block;
     text-align: right;
     margin-top: 5px;
-    color: #999;
+    color: $darkgrey;
   }
 
   i {
