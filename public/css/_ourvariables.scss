@@ -35,6 +35,14 @@ $md-lg-spacing: .03rem;
   letter-spacing: $md-lg-spacing;
 }
 
+@mixin subheading($color) {
+  font-family: $poppins;
+  font-weight: $md-weight;
+  font-size: $md-size;
+  color: $color;
+  letter-spacing: $sm-spacing;
+}
+
 @mixin quoteformatting($maxheight){
   max-height: $maxheight;
   overflow-y: scroll;
@@ -56,8 +64,8 @@ $md-lg-spacing: .03rem;
     }
   }
 
-  @else if $point==budgetbp {
-    @media only screen and (max-width: 620px) {
+  @else if $point==sm {
+    @media only screen and (max-width: 700px) {
       @content;
     }
   }

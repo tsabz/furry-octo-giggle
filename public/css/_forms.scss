@@ -11,3 +11,25 @@
   z-index: 10;
   box-shadow: 2px 2px 4px #cccccc;
 }
+
+.userforms {
+  @include bp(sm) {
+    margin-top: 30px;
+  }
+  width: 75%;
+
+  .changeform-btn {
+    @include bp(sm) {
+      top: 315px;
+      right: 5px;
+    }
+    position: absolute;
+    top: 20px;
+    right: 15px;
+  }
+
+  h3 {
+    @include secondaryheaderfont($darkblue);
+    text-shadow: 4px 4px 2px $brightgreen;
+  }
+}
