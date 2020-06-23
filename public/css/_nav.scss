@@ -43,6 +43,9 @@ nav {
       width: 100%;
       
       a {
+        @include bp(xs) {
+          font-size: $sm-size;
+        }
         color: #445a64;
         text-transform: uppercase;
         font-size: $md-size;

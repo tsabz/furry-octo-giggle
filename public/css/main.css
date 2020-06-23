@@ -132,6 +132,12 @@ nav .hide-on-med-and-down li a {
   letter-spacing: 0.02rem;
 }
 
+@media only screen and (max-width: 450px) {
+  .drop-down-ul .drop-down-menu li a {
+    font-size: 1rem;
+  }
+}
+
 .drop-down-ul .drop-down-menu li:hover {
   text-shadow: 2px 2px 2px #fff;
 }
@@ -180,6 +186,14 @@ nav .hide-on-med-and-down li a {
           box-shadow: 1px 1px 2px #374852;
   padding: .2rem .4rem;
   text-transform: uppercase;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 450px) {
+  .tags-ul li {
+    font-size: 0.8rem;
+    margin: 0 5px 5px 0;
+  }
 }
 
 .top-bar {
@@ -198,6 +212,15 @@ nav .hide-on-med-and-down li a {
           align-items: flex-start;
 }
 
+@media only screen and (max-width: 450px) {
+  .top-bar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
 .top-bar .right-top-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -214,6 +237,13 @@ nav .hide-on-med-and-down li a {
           align-items: center;
 }
 
+@media only screen and (max-width: 450px) {
+  .top-bar .right-top-bar {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
 .top-bar .right-top-bar .material-icons {
   margin-right: 15px;
 }
@@ -221,6 +251,22 @@ nav .hide-on-med-and-down li a {
 .top-bar .right-top-bar p {
   font-size: 1.5rem;
   letter-spacing: 0.02rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .top-bar .right-top-bar p {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .top-bar .right-top-bar p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.02rem;
+  }
 }
 
 .top-bar .edit-and-delete-buttons {
@@ -240,10 +286,23 @@ nav .hide-on-med-and-down li a {
   margin-bottom: 2rem;
 }
 
+@media only screen and (max-width: 450px) {
+  .top-bar .edit-and-delete-buttons {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
 .top-bar .edit-and-delete-buttons button {
   margin-left: 10px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 450px) {
+  .top-bar .edit-and-delete-buttons button {
+    font-size: 0.8rem;
+  }
 }
 
 .quotebody {
@@ -255,6 +314,12 @@ nav .hide-on-med-and-down li a {
   padding: 20px 30px 30px 20px;
   text-align: left;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .quotebody {
+    font-size: 1.5rem;
+  }
 }
 
 .quotebody .author {
