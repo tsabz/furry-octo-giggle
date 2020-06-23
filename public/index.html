@@ -14,6 +14,7 @@
 </head>
 <body ng-controller="CommonplaceController as ctrl">
   <nav ng-include="'partials/nav.html'"></nav>
+  <div ng-include="'partials/banner.html'"></div>
   <div id="errorContainer" class="container" ng-if="ctrl.errorExists" ng-include="'partials/error.html'"></div>
   <div class="container">
     <section ng-if="ctrl.loggedInUser === false">

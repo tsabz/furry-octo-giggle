@@ -229,15 +229,6 @@ body {
   text-transform: uppercase;
 }
 
-h2 {
-  color: #b7410e;
-  text-align: center;
-}
-
-.header {
-  margin: 400px;
-}
-
 .card-tabs {
   background-color: #ede1ce;
 }
@@ -246,5 +237,15 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.header {
+  margin: 300px;
+  background-image: url(https://images.pexels.com/photos/4303760/pexels-photo-4303760.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+}
+
+h2 {
+  color: #b7410e;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
