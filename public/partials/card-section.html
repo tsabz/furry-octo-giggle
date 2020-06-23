@@ -1,6 +1,7 @@
 <div class="cardcontainer">
+    </div>
     <div ng-repeat="quote in ctrl.allQuotes">
-        <div class="card">
+        <div class="card" ng-if="quote.public === false">
             <div class="card-content">
                 <h6>{{quote.body}}</h6>
             </div>
@@ -13,7 +14,7 @@
             </div>
             <div class="card-content">
                 <ul class="tags-ul">
-                    <li id="test4" class="blue-grey" ng-repeat="tag in quote.tags">#{{tag}}</li>
+                    <li id="test4" ng-repeat="tag in quote.tags">#{{tag}}</li>
                   </ul>
             </div>
           </div>  
