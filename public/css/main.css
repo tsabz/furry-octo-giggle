@@ -150,9 +150,7 @@ nav .hide-on-med-and-down li a {
 }
 
 .show-page-container .card .card-content {
-  padding: 0;
   height: 100%;
-  padding: 0;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   display: -webkit-box;
@@ -376,17 +374,8 @@ nav .hide-on-med-and-down li a {
   z-index: 5;
 }
 
-.card .card-content {
+.indexbody .card .card-content {
   padding: 30px;
-}
-
-.cardfont {
-  text-align: center;
-  color: #374852;
-  font-size: 30px;
-}
-
-.card-content {
   -ms-flex-line-pack: center;
       align-content: center;
   height: 100%;
@@ -405,7 +394,13 @@ nav .hide-on-med-and-down li a {
           justify-content: space-between;
 }
 
-.tags-ul {
+.cardfont {
+  text-align: center;
+  color: #374852;
+  font-size: 2rem;
+}
+
+.index-tags-ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,7 +416,7 @@ nav .hide-on-med-and-down li a {
           align-items: center;
 }
 
-.tags-ul li {
+.index-tags-ul li {
   background-color: #80ae86;
   color: #fff;
   -webkit-box-shadow: 1px 1px 2px #374852;
@@ -430,20 +425,25 @@ nav .hide-on-med-and-down li a {
   text-transform: uppercase;
 }
 
-#search {
+.search {
   font-family: "Poppins", sans-serif;
   color: #374852;
   text-align: left;
-  font-size: 50px;
+  font-size: 2rem;
   height: 60px;
 }
 
-input[type="text"]:focus:hover {
-  border-bottom: 1px solid #BBB;
-  cursor: text;
+@media only screen and (min-width: 1350px) {
+  .search {
+    font-size: 3rem;
+  }
 }
 
-#wrap {
+.search input[type="text"]:focus:hover {
+  border-bottom: 1px solid #BBB;
+}
+
+.wrap {
   text-align: left;
   margin: 20px;
   display: inine-block;
@@ -481,6 +481,12 @@ input[type="text"]:focus:hover {
   }
 }
 
+@media only screen and (min-width: 1350px) {
+  .header {
+    padding: 10rem 7rem;
+  }
+}
+
 h2 {
   font-family: "Playfair Display", serif;
   font-weight: 600;
@@ -488,8 +494,20 @@ h2 {
   color: #374852;
   letter-spacing: 0.03rem;
   text-align: center;
-  font-size: 80px;
+  font-size: 6rem;
   text-shadow: 2px 2px #ffffff;
+}
+
+@media only screen and (max-width: 450px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  h2 {
+    font-size: 3rem;
+  }
 }
 
 .login-page {

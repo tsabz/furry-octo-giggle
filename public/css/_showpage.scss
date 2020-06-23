@@ -9,17 +9,15 @@
     }
   }
   .card {
-  .card-content {
-    padding: 0;
-    height: 100%;
-    padding: 0;
-    font-family: $poppins;
-    font-weight: $thin-weight;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    .card-content {
+      height: 100%;
+      font-family: $poppins;
+      font-weight: $thin-weight;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
-}
 
 }
 
