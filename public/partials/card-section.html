@@ -1,19 +1,29 @@
+<div id="wrap">
+    <form action="" autocomplete="on">
+        <input id="search"type="text" ng-model="searchQ.tags" placeholder="search for quotes">
+    </form>
+</div>
+<body class=indexbody>
 <div class="cardcontainer">
-    <input type="text" ng-model="searchQ.tags" placeholder="search for quotes">
-    
-    </div>
+</div>
     <div ng-repeat="quote in ctrl.allQuotes | filter: searchQ">
         <div class="card" ng-if="quote.public === true">
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                  <li class="tab"><a href="#test4">{{quote.name}}</a></li>
+                  <!-- <li class="tab"><a class="active" href="#test5">{{quote.tags}}</a></li> -->
+                  <li class="tab"><a href="#test6">{{quote.author}}</a></li>
+                </ul>
             <div class="card-content">
                 <h6 class="cardfont">{{quote.body}}</h6>
             </div>
-            <div class="card-tabs">
+            <!-- <div class="card-tabs">
               <ul class="tabs tabs-fixed-width">
                 <li class="tab"><a href="#test4">{{quote.name}}</a></li>
-                <!-- <li class="tab"><a class="active" href="#test5">{{quote.tags}}</a></li> -->
-                <li class="tab"><a href="#test6">{{quote.author}}</a></li>
+                <li class="tab"><a class="active" href="#test5">{{quote.tags}}</a></li> -->
+                <!-- <li class="tab"><a href="#test6">{{quote.author}}</a></li>
               </ul>
-            </div>
+            </div> -->
             <div class="card-content">
                 <ul class="tags-ul">
                     <li id="test4" ng-repeat="tag in quote.tags">#{{tag}}</li>
@@ -21,3 +31,4 @@
             </div>
           </div>  
     </div>
+</body>
