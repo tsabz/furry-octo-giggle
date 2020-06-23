@@ -338,6 +338,60 @@ nav .hide-on-med-and-down li a {
   z-index: 5;
 }
 
+.card {
+  padding: 60px;
+}
+
+.cardfont {
+  text-align: center;
+  color: #374852;
+  font-size: 30px;
+}
+
+.card-content {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 100%;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tags-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tags-ul li {
+  background-color: #80ae86;
+  color: #fff;
+  -webkit-box-shadow: 1px 1px 2px #374852;
+          box-shadow: 1px 1px 2px #374852;
+  padding: .2rem .4rem;
+  text-transform: uppercase;
+}
+
 .header {
   padding: 200px;
   text-align: center;

@@ -8,6 +8,7 @@
         "_forms.scss",
         "_nav.scss",
         "_showpage.scss",
+        "_cardsection.scss",
         "_banner.scss",
         "_signin.scss"
     ],
