@@ -15,10 +15,6 @@
 <body ng-controller="CommonplaceController as ctrl">
   <div ng-if="ctrl.loggedInUser !== false" ng-include="'partials/banner.html'"></div>
   <nav ng-if="ctrl.loggedInUser !== false" ng-include="'partials/nav.html'"></nav>
-  <div ng-if="ctrl.loggedInUser !== false">
-      <input type="text" ng-model="searchQ.tags" placeholder="search for quotes">
-  </div>
-
   <div ng-if="ctrl.loggedInUser === false" class="login-page">
     <div ng-include="'partials/verticalbanner.html'"></div>
     <div class="userform-holder" ng-if="ctrl.loginForm === true" ng-include="'partials/login.html'"></div>
