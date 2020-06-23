@@ -19,21 +19,32 @@
   align-items: center;
 
   li {
+    @include bp(xs) {
+      font-size: $xs-size;
+      margin: 0 5px 5px 0;
+    }
     background-color: $brightgreen;
     color: $white;
     box-shadow: 1px 1px 2px $darkblue;
     padding: .2rem .4rem;
     text-transform: uppercase;
+    margin-top: 10px;
   }
 }
 
 .top-bar {
+  @include bp(xs) {
+    flex-direction: column-reverse;
+  }
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
 
   .right-top-bar {
+    @include bp(xs) {
+      align-self: flex-start
+    }
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -44,24 +55,36 @@
     }
 
     p {
+      @include bp(xs) {
+        font-size: 1.2rem;
+      }
+      @include bp(md) {
+        @include paragraphtext(#000000);
+      }
       font-size: 1.5rem;
       letter-spacing: $sm-spacing;
     }
   }
 
   .edit-and-delete-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 2rem;
+    @include bp(xs) {
+      align-self: flex-end;
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
   
-  button {
-    margin-left: 10px;
-    font-size: $xs-size;
-    text-transform: uppercase;
+    button {
+      @include bp(xs) {
+        font-size: $xs-size;
+      }
+      margin-left: 10px;
+      font-size: $sm-size;
+      text-transform: uppercase;
+    }
   }
-}
 }
 
 //style elements drawn from https://codepen.io/hannahlivnat/pen/wvMJmyw
