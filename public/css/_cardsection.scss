@@ -1,53 +1,33 @@
-
-.container {
-    $neutral-color: #e3e6dd;
-}
-.card {
+.indexbody {
+  .card {
     .card-content {
         padding: 30px;
-        $neutral-color: #e3e6dd;
+        align-content: center;
+        height: 100%;
+        margin: auto;
+        font-family: $poppins;
+        font-weight: $thin-weight;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
   }
-
-// .card-tabs {
-//     background-color: rgb(123, 160, 83);
-
-// }
+}
 
 .cardfont {
     text-align: center;
     color : #374852;
-    // $darkgrey: #999;
-    font-size: 30px;
-    // text-shadow: 1px 1px #565b52;
+    font-size: $md-size;
     
 }
 
-.card-content {
-    align-content: center;
-    height: 100%;
-    margin: auto;
-    font-family: $poppins;
-    font-weight: $thin-weight;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-// .test4 {
-//     display: flex;
-//     // flex-flow: row wrap; 
-//     // justify-content: space-evenly;
-// }
-
-.tags-ul {
+.index-tags-ul {
     display: flex;
     flex-flow: row wrap; 
     justify-content: space-evenly;
     align-items: center;
   
     li {
-    
       background-color: $brightgreen;
       color: $white;
       box-shadow: 1px 1px 2px $darkblue;
@@ -56,24 +36,25 @@
     }
   }
 
-#search {
+.search {
+    @include bp(xl) {
+      font-size: $lg-size;
+    }
     font-family: $poppins;
     color : #374852;
     text-align: left;
-    font-size: 50px;
+    font-size: $md-size;
     height: 60px;
+
+    input[type="text"]:focus:hover {
+      border-bottom: 1px solid #BBB;
+   }
 }
 
-input[type="text"]:focus:hover {
-    border-bottom: 1px solid #BBB;
-    cursor: text;
-  }
-
-  #wrap {
-    text-align: left;
-    margin: 20px;
-    display: inine-block;
-    position: relative;
-    height: 150px;
-    // float: right;
-  }
+.wrap {
+  text-align: left;
+  margin: 20px;
+  display: inine-block;
+  position: relative;
+  height: 150px;
+}

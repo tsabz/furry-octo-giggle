@@ -2,8 +2,10 @@
         @include bp(sm) {
             background: no-repeat center/100% 100% -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(180, 196, 167, 0.5))), url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
             background-size: cover;
-            $sm-size: 1rem;
           }
+        @include bp(xl) {
+          padding: 10rem 7rem;
+        }
         background-size: cover;
         display: flex;
         flex-direction: column;
@@ -11,7 +13,6 @@
         justify-content: center;
         width: 100%;
         height: 100%;
-        
         padding: 7rem; 
         text-align: center;
         background: no-repeat center/100% 100% -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(180, 196, 167, 0.5))), url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
@@ -20,9 +21,15 @@
     
     
     h2 {
+        @include bp(xs){
+          font-size: $md-size;
+        }
+        @include bp(sm) {
+          font-size: $lg-size;
+        }
         @include secondaryheaderfont($darkblue);
         text-align: center;
-        font-size: 80px;
+        font-size: $xl-size;
         text-shadow: 2px 2px #ffffff;
     }
 
