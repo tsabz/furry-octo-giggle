@@ -95,7 +95,7 @@ $md-lg-spacing: .03rem;
   }
 
   @else if $point==xl {
-    @media only screen and (min-width: 1300px) {
+    @media only screen and (min-width: 1350px) {
       @content;
     }
   }
