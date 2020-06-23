@@ -1,5 +1,4 @@
 <div class="cardcontainer">
-    <div ng-include="'partials/banner.html'"></div>
     <div ng-repeat="quote in ctrl.allQuotes">
         <div class="card">
             <div class="card-content">
@@ -12,7 +11,7 @@
                 <li class="tab"><a href="#test6">{{quote.author}}</a></li>
               </ul>
             </div>
-            <div class="card-content grey lighten-4">
+            <div class="card-content">
                 <ul class="tags-ul">
                     <li id="test4" class="blue-grey" ng-repeat="tag in quote.tags">#{{tag}}</li>
                   </ul>
