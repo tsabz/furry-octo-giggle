@@ -1,11 +1,21 @@
-<form name="login" ng-submit="ctrl.login()">
-  <h2>Login</h2>
-  <fieldset>
-    <label for="username">Username:</label>
-    <input type="text" name="username" ng-model="ctrl.createForm.username">
-    <label for="password">Password:</label>
-    <input type="password" name="password" ng-model="ctrl.createForm.password">
-  </fieldset>
-  <input type="submit">
-  <p>New User? <button ng-click="ctrl.toggleForm()">Sign Up Instead</button></p>
-</form>
+  <form class="userforms" name="login" ng-submit="ctrl.login()">
+    <h3>Login</h3>
+    <div class="row">
+      <div class="input-field col s12">
+        <input type="text" name="username" ng-model="ctrl.createForm.username">
+        <label for="username">Username:</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input type="password" name="password" ng-model="ctrl.createForm.password">
+        <label for="password">Password:</label>
+      </div>
+    </div>
+    <div class="row center" >
+        <input class=" btn-small" type="submit">
+    </div>
+    <div class="row">
+        <button class="btn-small changeform-btn" ng-click="ctrl.toggleForm()">New User? Sign Up Instead</button>
+    </div>
+  </form>

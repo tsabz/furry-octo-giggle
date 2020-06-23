@@ -13,13 +13,14 @@
     <script src="/js/app.js" charset="utf-8"></script>
 </head>
 <body ng-controller="CommonplaceController as ctrl">
-  <nav ng-include="'partials/nav.html'"></nav>
+  <nav ng-if="ctrl.loggedInUser !== false" ng-include="'partials/nav.html'"></nav>
   <div id="errorContainer" class="container" ng-if="ctrl.errorExists" ng-include="'partials/error.html'"></div>
+  <div ng-if="ctrl.loggedInUser === false" class="login-page">
+    <div ng-include="'partials/verticalbanner.html'"></div>
+    <div class="userform-holder" ng-if="ctrl.loginForm === true" ng-include="'partials/login.html'"></div>
+    <div class="userform-holder" ng-if="ctrl.signupForm === true" ng-include="'partials/signup.html'"></div>
+  </div>
   <div class="container">
-    <section ng-if="ctrl.loggedInUser === false">
-      <div ng-if="ctrl.loginForm === true" ng-include="'partials/login.html'"></div>
-      <div ng-if="ctrl.signupForm === true" ng-include="'partials/signup.html'"></div>
-    </section>
     <section ng-if="ctrl.loggedInUser !== false">
       <div ng-include="ctrl.includePath"></div>
     </section>
