@@ -167,6 +167,8 @@ app.controller("CommonplaceController", ['$http', function($http) {
       this.createForm = {}
       this.getUserQuotes()
       this.getQuotes()
+      this.errorExists = false;
+
     })
   }
 
@@ -182,6 +184,8 @@ app.controller("CommonplaceController", ['$http', function($http) {
         this.createForm = {}
         this.getUserQuotes()
         this.getQuotes()
+        this.errorExists = false;
+
 
       } else {
         console.log(response.data.errorMessage)

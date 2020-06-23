@@ -14,7 +14,6 @@
 </head>
 <body ng-controller="CommonplaceController as ctrl">
   <nav ng-if="ctrl.loggedInUser !== false" ng-include="'partials/nav.html'"></nav>
-  <div id="errorContainer" class="container" ng-if="ctrl.errorExists" ng-include="'partials/error.html'"></div>
   <div ng-if="ctrl.loggedInUser === false" class="login-page">
     <div ng-include="'partials/verticalbanner.html'"></div>
     <div class="userform-holder" ng-if="ctrl.loginForm === true" ng-include="'partials/login.html'"></div>

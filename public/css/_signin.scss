@@ -26,7 +26,6 @@
     @include bp(sm) {
       background: no-repeat center / 100% 100% linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/vertical-nav-responsive-image.jpg');
       background-size: cover;
-
     }
 
     grid-area: banner;
@@ -47,12 +46,11 @@
     }
 
     p {
-      @include bp(sm) {
-        text-align: center;
-      }
       @include subheading($white);
       font-size: $sm-size;
       text-shadow: 1px 1px 3px #000000;
+      text-align: center;
+
     }
   }
 
