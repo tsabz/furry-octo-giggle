@@ -2,12 +2,13 @@
 .container {
     $neutral-color: #e3e6dd;
 }
-
 .card {
-    
-    padding: 60px;
-    $neutral-color: #e3e6dd;
-}
+    .card-content {
+        padding: 30px;
+        $neutral-color: #e3e6dd;
+    }
+  }
+
 // .card-tabs {
 //     background-color: rgb(123, 160, 83);
 
@@ -55,3 +56,24 @@
     }
   }
 
+#search {
+    font-family: $poppins;
+    color : #374852;
+    text-align: left;
+    font-size: 50px;
+    height: 60px;
+}
+
+input[type="text"]:focus:hover {
+    border-bottom: 1px solid #BBB;
+    cursor: text;
+  }
+
+  #wrap {
+    text-align: left;
+    margin: 20px;
+    display: inine-block;
+    position: relative;
+    height: 150px;
+    // float: right;
+  }
