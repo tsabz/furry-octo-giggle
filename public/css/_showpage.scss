@@ -13,8 +13,7 @@
       @include secondaryheaderfont(#000000);
     }
 
-  }
-
+}
 
 .card-content {
   height: 100%;
@@ -33,8 +32,10 @@
   align-items: center;
 
   li {
+    background-color: $brightgreen;
     color: $white;
-    padding: .1rem .2rem;
+    box-shadow: 1px 1px 2px $darkblue;
+    padding: .2rem .4rem;
     text-transform: uppercase;
   }
 }
@@ -60,6 +61,20 @@
       letter-spacing: $sm-spacing;
     }
   }
+
+  .edit-and-delete-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
+  
+  button {
+    margin-left: 10px;
+    font-size: $xs-size;
+    text-transform: uppercase;
+  }
+}
 }
 
 //style elements drawn from https://codepen.io/hannahlivnat/pen/wvMJmyw
@@ -85,17 +100,5 @@
 
 }
 
-.edit-and-delete-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 2rem;
-  
-  button {
-    margin-left: 10px;
-    font-size: 10px;
-    text-transform: uppercase;
-  }
-}
+
 

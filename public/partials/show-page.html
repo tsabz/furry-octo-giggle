@@ -24,7 +24,7 @@
           <h2 class="quotebody">{{quote.body}}
           <span class="author"><i>{{quote.author}}</i></span></h2>
           <ul class="tags-ul">
-            <li class="blue-grey" ng-repeat="tag in quote.tags">{{tag}}</li>
+            <li ng-repeat="tag in quote.tags">{{tag}}</li>
           </ul>
 
           <div class="editform"ng-if="ctrl.updateForm === $index">

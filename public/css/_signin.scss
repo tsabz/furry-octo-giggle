@@ -1,0 +1,65 @@
+.login-page {
+  @include bp(xl) {
+    grid-template-columns: 600px 1fr;
+  }
+
+  @include bp(lg) {
+    grid-template-columns: 400px 1fr;
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 100%;
+    grid-template-rows: 300px 1fr;
+    grid-template-areas: "banner"
+                          "form";
+  }
+
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 100vh;
+  grid-template-areas: "banner form";
+
+  .verticalbanner {
+    @include bp(sm) {
+      background: no-repeat center / 100% 100% linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/vertical-nav-responsive-image.jpg');
+      background-size: cover;
+
+    }
+
+    grid-area: banner;
+    background: no-repeat center / 100% 100% linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('../assets/vertical-nav-desktop-image.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    h3 {
+      @include secondaryheaderfont($white);
+      font-size: $md-size;
+      text-transform: uppercase;
+      text-shadow: 1px 2px 2px #000000;
+    }
+
+    p {
+      @include bp(sm) {
+        text-align: center;
+      }
+      @include subheading($white);
+      font-size: $sm-size;
+      text-shadow: 1px 1px 3px #000000;
+    }
+  }
+
+  .userform-holder {
+    grid-area: form;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

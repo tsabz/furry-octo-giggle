@@ -30,6 +30,38 @@ body {
           box-shadow: 2px 2px 4px #cccccc;
 }
 
+.userforms {
+  width: 75%;
+}
+
+@media only screen and (max-width: 700px) {
+  .userforms {
+    margin-top: 30px;
+  }
+}
+
+.userforms .changeform-btn {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+
+@media only screen and (max-width: 700px) {
+  .userforms .changeform-btn {
+    top: 315px;
+    right: 5px;
+  }
+}
+
+.userforms h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: #374852;
+  letter-spacing: 0.03rem;
+  text-shadow: 4px 4px 2px #80ae86;
+}
+
 .drop-down-ul .drop-down-menu {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
@@ -133,8 +165,11 @@ body {
 }
 
 .tags-ul li {
+  background-color: #80ae86;
   color: #fff;
-  padding: .1rem .2rem;
+  -webkit-box-shadow: 1px 1px 2px #374852;
+          box-shadow: 1px 1px 2px #374852;
+  padding: .2rem .4rem;
   text-transform: uppercase;
 }
 
@@ -179,6 +214,29 @@ body {
   letter-spacing: 0.02rem;
 }
 
+.top-bar .edit-and-delete-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+.top-bar .edit-and-delete-buttons button {
+  margin-left: 10px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
 .quotebody {
   max-height: 200px;
   overflow-y: scroll;
@@ -206,39 +264,6 @@ body {
   z-index: 5;
 }
 
-.edit-and-delete-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 2rem;
-}
-
-.edit-and-delete-buttons button {
-  margin-left: 10px;
-  font-size: 10px;
-  text-transform: uppercase;
-}
-
-.card-tabs {
-  background-color: #ede1ce;
-}
-
-.test4 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .header {
   margin: 300px;
   background-image: url(https://images.pexels.com/photos/4303760/pexels-photo-4303760.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
@@ -247,5 +272,116 @@ body {
 h2 {
   color: #b7410e;
   text-align: center;
+}
+
+.login-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 300px 1fr;
+      grid-template-columns: 300px 1fr;
+  -ms-grid-rows: 100vh;
+      grid-template-rows: 100vh;
+      grid-template-areas: "banner form";
+}
+
+@media only screen and (min-width: 1300px) {
+  .login-page {
+    -ms-grid-columns: 600px 1fr;
+        grid-template-columns: 600px 1fr;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .login-page {
+    -ms-grid-columns: 400px 1fr;
+        grid-template-columns: 400px 1fr;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .login-page {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 300px 1fr;
+        grid-template-rows: 300px 1fr;
+        grid-template-areas: "banner" "form";
+  }
+}
+
+.login-page .verticalbanner {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: banner;
+  background: no-repeat center/100% 100% -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.5))), url("../assets/vertical-nav-desktop-image.jpg");
+  background: no-repeat center/100% 100% linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../assets/vertical-nav-desktop-image.jpg");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .login-page .verticalbanner {
+    background: no-repeat center/100% 100% -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../assets/vertical-nav-responsive-image.jpg");
+    background: no-repeat center/100% 100% linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/vertical-nav-responsive-image.jpg");
+    background-size: cover;
+  }
+}
+
+.login-page .verticalbanner h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 0.03rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 2px #000000;
+}
+
+.login-page .verticalbanner p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 0.02rem;
+  font-size: 1rem;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+@media only screen and (max-width: 700px) {
+  .login-page .verticalbanner p {
+    text-align: center;
+  }
+}
+
+.login-page .userform-holder {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: form;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=main.css.map */

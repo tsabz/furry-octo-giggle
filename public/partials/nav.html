@@ -1,6 +1,6 @@
 <div class="nav-wrapper">
   <!-- nav bar if user is NOT logged in -->
-  <div ng-if="ctrl.loggedInUser === false" >
+  <!--<div ng-if="ctrl.loggedInUser === false" >
     <ul class="right">
       <li>
         <a href="#" ng-click="ctrl.setLogin()">Login</a>
@@ -9,9 +9,9 @@
         <a href="#" ng-click="ctrl.setSignup()">Sign Up</a>
       </li>
     </ul>
-  </div>
+  </div>-->
   <!-- nav bar is user is logged in -->
-  <div ng-if="ctrl.loggedInUser !== false">
+  <div>
     <!-- mobile responsive nav bar -->
     <ul class="hide-on-large-only drop-down-ul">
       <a class="sidenav-trigger"><i class="material-icons" ng-click="ctrl.toggleDropdown()">menu</i></a>
