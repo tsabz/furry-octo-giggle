@@ -13,8 +13,9 @@
     <script src="/js/app.js" charset="utf-8"></script>
 </head>
 <body ng-controller="CommonplaceController as ctrl">
-  <nav ng-if="ctrl.loggedInUser !== false" ng-include="'partials/nav.html'"></nav>
   <div ng-if="ctrl.loggedInUser !== false" ng-include="'partials/banner.html'"></div>
+  <nav ng-if="ctrl.loggedInUser !== false" ng-include="'partials/nav.html'"></nav>
+
 
   <div ng-if="ctrl.loggedInUser === false" class="login-page">
     <div ng-include="'partials/verticalbanner.html'"></div>
