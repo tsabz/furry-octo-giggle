@@ -1,6 +1,6 @@
 <div class="cardcontainer">
     </div>
-    <div ng-repeat="quote in ctrl.allQuotes">
+    <div ng-repeat="quote in ctrl.allQuotes | filter:{ 'tags': searchQ }">
         <div class="card" ng-if="quote.public === true">
             <div class="card-content">
                 <h6 class="cardfont">{{quote.body}}</h6>

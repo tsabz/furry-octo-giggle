@@ -166,12 +166,16 @@ app.controller("CommonplaceController", ['$http', function($http) {
       method: 'POST',
       data: this.createForm
     }).then((response) => {
-      this.loggedInUser = response.data
-      this.createForm = {}
-      this.getUserQuotes()
-      this.getQuotes()
-      this.errorExists = false;
-
+      if (response.data.errorMessage){
+        this.errorExists = true;
+        this.errorMessage = response.data.errorMessage;
+      } else if (response.data.username){
+        this.loggedInUser = response.data
+        this.createForm = {}
+        this.getUserQuotes()
+        this.getQuotes()
+        this.errorExists = false;
+      }
     })
   }
 
@@ -188,8 +192,6 @@ app.controller("CommonplaceController", ['$http', function($http) {
         this.getUserQuotes()
         this.getQuotes()
         this.errorExists = false;
-
-
       } else {
         console.log(response.data.errorMessage)
         this.errorMessage = response.data.errorMessage;
