@@ -62,6 +62,14 @@ body {
   text-shadow: 4px 4px 2px #80ae86;
 }
 
+.newform {
+  width: 100%;
+}
+
+.newform h3 {
+  text-shadow: 1px 1px 2px #80ae86;
+}
+
 .drop-down-ul .drop-down-menu {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
@@ -237,6 +245,24 @@ body {
   padding-left: 5px;
   font-size: 1rem;
   z-index: 5;
+}
+
+.header {
+  padding: 200px;
+  text-align: center;
+  background: no-repeat center/100% 100% -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(180, 196, 167, 0.5))), url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  opacity: 2;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: #374852;
+  letter-spacing: 0.03rem;
+  text-align: center;
+  font-size: 80px;
+  text-shadow: 2px 2px #ffffff;
 }
 
 .login-page {
