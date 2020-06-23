@@ -1,12 +1,20 @@
-<h2>card section test</h2>
-<div>Bookmark Place</div>
-<div class="container">
+<div class="cardcontainer">
     <div ng-repeat="quote in ctrl.allQuotes">
-        <p>This is a new quote</p>
-        <p>body: {{quote.body}}</p>
-        <p>name: {{quote.name}}</p>
-        <p>body: {{quote.body}}</p>
-        <p>author: {{quote.author}}</p>
-        <p>tags: {{quote.tags}}</p>    
+        <div class="card">
+            <div class="card-content">
+                <h6>{{quote.body}}</h6>
+            </div>
+            <div class="card-tabs">
+              <ul class="tabs tabs-fixed-width">
+                <li class="tab"><a href="#test4">{{quote.name}}</a></li>
+                <!-- <li class="tab"><a class="active" href="#test5">{{quote.tags}}</a></li> -->
+                <li class="tab"><a href="#test6">{{quote.author}}</a></li>
+              </ul>
+            </div>
+            <div class="card-content">
+                <ul class="tags-ul">
+                    <li id="test4" class="blue-grey" ng-repeat="tag in quote.tags">#{{tag}}</li>
+                  </ul>
+            </div>
+          </div>  
     </div>
-</div>

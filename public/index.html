@@ -20,6 +20,7 @@
     <div class="userform-holder" ng-if="ctrl.loginForm === true" ng-include="'partials/login.html'"></div>
     <div class="userform-holder" ng-if="ctrl.signupForm === true" ng-include="'partials/signup.html'"></div>
   </div>
+  <div ng-include="'partials/banner.html'"></div>
   <div class="container">
     <section ng-if="ctrl.loggedInUser !== false">
       <div ng-include="ctrl.includePath"></div>

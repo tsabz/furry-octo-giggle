@@ -264,6 +264,24 @@ body {
   z-index: 5;
 }
 
+.header {
+  padding: 200px;
+  text-align: center;
+  background: no-repeat center/100% 100% -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(180, 196, 167, 0.5))), url(https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  opacity: 2;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: #374852;
+  letter-spacing: 0.03rem;
+  text-align: center;
+  font-size: 80px;
+  text-shadow: 2px 2px #ffffff;
+}
+
 .login-page {
   position: relative;
   width: 100%;
