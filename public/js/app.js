@@ -143,6 +143,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.toggleForm = () => {
     this.loginForm = !this.loginForm;
     this.signupForm = !this.signupForm;
+    this.clearError();
   }
 
   //sets login or signup active via buttons on nav
