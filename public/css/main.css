@@ -370,12 +370,7 @@ h2 {
   letter-spacing: 0.02rem;
   font-size: 1rem;
   text-shadow: 1px 1px 3px #000000;
-}
-
-@media only screen and (max-width: 700px) {
-  .login-page .verticalbanner p {
-    text-align: center;
-  }
+  text-align: center;
 }
 
 .login-page .userform-holder {
@@ -391,5 +386,36 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.errorcontainer > div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.errorcontainer > div p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #374852;
+  letter-spacing: 0.02rem;
+  margin-left: 5px;
+}
+
+.errorcontainer > div .deleteerror:hover {
+  color: red;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

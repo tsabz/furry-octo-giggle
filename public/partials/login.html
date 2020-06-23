@@ -16,6 +16,10 @@
         <input class=" btn-small" type="submit">
     </div>
     <div class="row">
+      <div id="errorContainer" class="errorcontainer" ng-if="ctrl.errorExists" ng-include="'partials/error.html'"></div>
+    </div>
+
+    <div class="row">
         <button class="btn-small changeform-btn" ng-click="ctrl.toggleForm()">New User? Sign Up Instead</button>
     </div>
   </form>

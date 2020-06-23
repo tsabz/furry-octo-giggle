@@ -43,6 +43,14 @@ $md-lg-spacing: .03rem;
   letter-spacing: $sm-spacing;
 }
 
+@mixin paragraphtext($color) {
+  font-family: $poppins;
+  font-weight: $thin-weight;
+  font-size: $sm-size;
+  color: $color; 
+  letter-spacing: $sm-spacing;
+}
+
 @mixin quoteformatting($maxheight){
   max-height: $maxheight;
   overflow-y: scroll;
@@ -53,6 +61,7 @@ $md-lg-spacing: .03rem;
   text-align: left;
   font-size: 2rem;
 }
+
 
 
 //Breakpoints for Media Queries -- use @include bp(xs){} to implement on other pages

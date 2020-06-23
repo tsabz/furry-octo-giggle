@@ -143,6 +143,7 @@ app.controller("CommonplaceController", ['$http', function($http) {
   this.toggleForm = () => {
     this.loginForm = !this.loginForm;
     this.signupForm = !this.signupForm;
+    this.clearError();
   }
 
   //sets login or signup active via buttons on nav
@@ -167,6 +168,8 @@ app.controller("CommonplaceController", ['$http', function($http) {
       this.createForm = {}
       this.getUserQuotes()
       this.getQuotes()
+      this.errorExists = false;
+
     })
   }
 
@@ -182,6 +185,8 @@ app.controller("CommonplaceController", ['$http', function($http) {
         this.createForm = {}
         this.getUserQuotes()
         this.getQuotes()
+        this.errorExists = false;
+
 
       } else {
         console.log(response.data.errorMessage)
