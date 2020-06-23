@@ -1,16 +1,25 @@
 
 body {
     $neutral-color: #e3e6dd;
-    margin: 30px;
 }
 
-
-.card-tabs {
-    background-color: rgb(237, 225, 206);
-
+.card {
+    padding: 60px;
+    $neutral-color: #e3e6dd;
 }
+// .card-tabs {
+//     background-color: rgb(123, 160, 83);
 
+// }
 
+.cardfont {
+    text-align: center;
+    color : #374852;
+    // $darkgrey: #999;
+    font-size: 30px;
+    // text-shadow: 1px 1px #565b52;
+    
+}
 
 .card-content {
     align-content: center;
@@ -44,6 +53,3 @@ body {
     }
   }
 
-h6 {
-    font-size: 20px;
-}
