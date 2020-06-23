@@ -11,11 +11,23 @@ body {
 }
 
 
-.test4 {
+
+.card-content {
+    align-content: center;
+    height: 100%;
+    margin: auto;
+    font-family: $poppins;
+    font-weight: $thin-weight;
     display: flex;
-    // flex-flow: row wrap; 
-    // justify-content: space-evenly;
-}
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+// .test4 {
+//     display: flex;
+//     // flex-flow: row wrap; 
+//     // justify-content: space-evenly;
+// }
 
 .tags-ul {
     display: flex;
@@ -31,3 +43,7 @@ body {
       text-transform: uppercase;
     }
   }
+
+h6 {
+    font-size: 20px;
+}
