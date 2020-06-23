@@ -1,15 +1,26 @@
-.card-section > div > div {
-  padding: 0;
+
+.show-page-container {
+
+  .card.large, .card{
+    @include bp(xs) {
+      padding: 40px 20px;
+      height: 400px;
+
+    }
+  }
+  .card {
+  .card-content {
+    padding: 0;
+    height: 100%;
+    padding: 0;
+    font-family: $poppins;
+    font-weight: $thin-weight;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
-.card-content {
-  height: 100%;
-  margin: auto;
-  font-family: $poppins;
-  font-weight: $thin-weight;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .tags-ul {
@@ -33,17 +44,19 @@
 }
 
 .top-bar {
-  @include bp(xs) {
-    flex-direction: column-reverse;
+  @include bp(xl) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
+
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column-reverse;
+
 
   .right-top-bar {
     @include bp(xs) {
-      align-self: flex-start
+      align-self: center;
     }
     display: flex;
     flex-direction: row;
@@ -55,20 +68,20 @@
     }
 
     p {
-      @include bp(xs) {
-        font-size: 1.2rem;
+      @include bp(xl) {
+        font-size: 1.7rem;
       }
-      @include bp(md) {
-        @include paragraphtext(#000000);
+      @include bp(sm) {
+        font-size: $sm-size;
       }
+      @include paragraphtext(#000000);
       font-size: 1.5rem;
-      letter-spacing: $sm-spacing;
     }
   }
 
   .edit-and-delete-buttons {
     @include bp(xs) {
-      align-self: flex-end;
+      align-self: center;
     }
     display: flex;
     flex-direction: row;
@@ -78,10 +91,14 @@
   
     button {
       @include bp(xs) {
-        font-size: $xs-size;
+        font-size: .6rem;
       }
+      @include bp(xl) {
+        font-size: $sm-size;
+      }
+
       margin-left: 10px;
-      font-size: $sm-size;
+      font-size: $xs-size;
       text-transform: uppercase;
     }
   }
@@ -89,7 +106,15 @@
 
 //style elements drawn from https://codepen.io/hannahlivnat/pen/wvMJmyw
 .quotebody {
-  @include quoteformatting(200px);
+  @include bp(xs) {
+    font-size: 1.2rem;
+  }
+  @include bp(xl) {
+    @include quoteformatting(200px);
+
+  }
+    @include quoteformatting(225px);
+    font-size: 1.7rem;
 
   .author {
     position: relative;

@@ -142,13 +142,17 @@ nav .hide-on-med-and-down li a {
   text-shadow: 2px 2px 2px #fff;
 }
 
-.card-section > div > div {
-  padding: 0;
+@media only screen and (max-width: 450px) {
+  .show-page-container .card.large, .show-page-container .card {
+    padding: 40px 20px;
+    height: 400px;
+  }
 }
 
-.card-content {
+.show-page-container .card .card-content {
+  padding: 0;
   height: 100%;
-  margin: auto;
+  padding: 0;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   display: -webkit-box;
@@ -200,24 +204,24 @@ nav .hide-on-med-and-down li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (min-width: 1350px) {
   .top-bar {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -239,8 +243,9 @@ nav .hide-on-med-and-down li a {
 
 @media only screen and (max-width: 450px) {
   .top-bar .right-top-bar {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -249,23 +254,23 @@ nav .hide-on-med-and-down li a {
 }
 
 .top-bar .right-top-bar p {
-  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #000000;
   letter-spacing: 0.02rem;
+  font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (min-width: 1350px) {
   .top-bar .right-top-bar p {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (max-width: 700px) {
   .top-bar .right-top-bar p {
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
     font-size: 1rem;
-    color: #000000;
-    letter-spacing: 0.02rem;
   }
 }
 
@@ -288,25 +293,32 @@ nav .hide-on-med-and-down li a {
 
 @media only screen and (max-width: 450px) {
   .top-bar .edit-and-delete-buttons {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
 .top-bar .edit-and-delete-buttons button {
   margin-left: 10px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
 }
 
 @media only screen and (max-width: 450px) {
   .top-bar .edit-and-delete-buttons button {
-    font-size: 0.8rem;
+    font-size: .6rem;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  .top-bar .edit-and-delete-buttons button {
+    font-size: 1rem;
   }
 }
 
 .quotebody {
-  max-height: 200px;
+  max-height: 225px;
   overflow-y: scroll;
   color: #999;
   display: inline-block;
@@ -314,6 +326,32 @@ nav .hide-on-med-and-down li a {
   padding: 20px 30px 30px 20px;
   text-align: left;
   font-size: 2rem;
+  font-size: 1.7rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .quotebody {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  .quotebody {
+    max-height: 200px;
+    overflow-y: scroll;
+    color: #999;
+    display: inline-block;
+    margin: .5rem 0;
+    padding: 20px 30px 30px 20px;
+    text-align: left;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1350px) and (max-width: 450px) {
+  .quotebody {
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (max-width: 450px) {
@@ -467,7 +505,7 @@ h2 {
       grid-template-areas: "banner form";
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1350px) {
   .login-page {
     -ms-grid-columns: 600px 1fr;
         grid-template-columns: 600px 1fr;
