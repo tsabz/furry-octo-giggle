@@ -2,19 +2,6 @@
   padding: 0;
 }
 
-.show-page-banner { 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 2em auto;
-
-    h2, h3 {
-      @include secondaryheaderfont(#000000);
-    }
-
-}
-
 .card-content {
   height: 100%;
   margin: auto;

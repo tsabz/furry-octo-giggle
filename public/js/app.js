@@ -106,6 +106,8 @@ app.controller("CommonplaceController", ['$http', function($http) {
 
   // EDIT QUOTES
   this.editQuote = (quote) => {
+    this.tagsArray = this.updatedQuoteForm.tags.split(',');
+    this.updatedQuoteForm.tags = this.tagsArray;
     this.updatedQuoteForm.public = this.isSwitchedOn;
     $http({
       method: 'PUT',

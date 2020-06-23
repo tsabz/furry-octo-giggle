@@ -1,6 +1,29 @@
+nav {
+  background-color: $white;
+  margin-bottom: 5rem;
+  
+  .hide-on-med-and-down {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    li {
+        a {
+         color: #445a64;
+         }
+    }
+  }
+
+}
+
 //responsive nav bar -- some styles used from https://css-tricks.com/solved-with-css-dropdown-menus/
 .drop-down-ul {
   
+  a {
+    .material-icons {
+      color: $darkblue;
+    }
+  }
+
   .drop-down-menu {
     transition: all 0.7s ease;
     position: absolute; 
@@ -24,6 +47,7 @@
         text-transform: uppercase;
         font-size: $md-size;
         letter-spacing: $sm-spacing;
+
       }
 
       &:hover {
