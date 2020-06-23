@@ -2,8 +2,10 @@
     
 
 <div class="cardcontainer">
+    <input type="text" ng-model="searchQ.tags" placeholder="search for quotes">
+    
     </div>
-    <div ng-repeat="quote in ctrl.allQuotes">
+    <div ng-repeat="quote in ctrl.allQuotes | filter: searchQ">
         <div class="card" ng-if="quote.public === true">
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
