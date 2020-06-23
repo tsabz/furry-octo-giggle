@@ -3,7 +3,7 @@
   <h3>Sign Up</h3>
   <div class="row">
     <div class="input-field col s6">
-      <input type="text" name="firstname" ng-model="ctrl.createForm.firstname">
+      <input type="text" name="firstname" ng-model="ctrl.createForm.firstname" required>
       <label for="firstname">First Name</label>
     </div>
     <div class="input-field col s6">
@@ -13,13 +13,13 @@
   </div>
     <div class="row">
       <div class="input-field col s12">
-        <input type="text" name="username" ng-model="ctrl.createForm.username">
+        <input type="text" name="username" ng-model="ctrl.createForm.username" required>
         <label for="username">Username</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input type="password" name="password" ng-model="ctrl.createForm.password">
+        <input type="password" name="password" ng-model="ctrl.createForm.password" required>
         <label for="password">Password</label>
       </div>
     </div>
